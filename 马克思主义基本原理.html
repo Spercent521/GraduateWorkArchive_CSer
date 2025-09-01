@@ -1,0 +1,1722 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+.mac-os-11 { --title-bar-height: 28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5 { white-space: pre-wrap; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  #write > p:nth-child(1) { margin-top: 0px; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+  figure { overflow-x: visible; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex: 2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+.md-alert.md-alert-note { border-left-color: rgb(9, 105, 218); }
+.md-alert.md-alert-important { border-left-color: rgb(130, 80, 223); }
+.md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
+.md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
+.md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left: 0.25em solid rgb(0, 0, 0); }
+.md-alert-text-note { color: rgb(9, 105, 218); }
+.md-alert-text-important { color: rgb(130, 80, 223); }
+.md-alert-text-warning { color: rgb(154, 103, 0); }
+.md-alert-text-tip { color: rgb(31, 136, 61); }
+.md-alert-text-caution { color: rgb(207, 34, 46); }
+.md-alert-text { font-size: 0.9rem; font-weight: 700; }
+.md-alert-text svg { fill: currentcolor; position: relative; top: 0.125em; margin-right: 1ch; overflow: visible; }
+.md-alert-text-container::after { content: attr(data-text); text-transform: capitalize; pointer-events: none; margin-right: 1ch; }
+
+
+:root {
+
+    /********************************* Text alignment 文本对齐方式 *************************************
+     **************************************************************************************************
+     * - left:         Align Left         左对齐 
+     * - right:        Align right        右对齐
+     * - center:       Align center       居中对齐
+     * - justify:      Align justify      两端对齐
+     * - justify-all:  Align justify-all  全部两端对齐
+     * - start:        Align start        行首对齐
+     * - end:          Align end          行尾对齐
+     **************************************************************************************************/
+    --text-align: justify;
+
+    /************************* Interactive animation configuration 交互动画配置 ************************
+     **************************************************************************************************
+     ** 1.To use interactive animations, first set --use-dynamic-effect` to 1, Then adjust other 
+     **   configuration items as needed.
+     ** 2.To turn off all interactive animations, set `--use-dynamic-effect` to 0
+     **                                           set `--list-ol-text-style` to italic
+     *
+     ** 1.若要使用交互动画, 请先将 `--use-dynamic-effect` 设置为 1, 然后根据需要调整其他配置项
+     ** 2.若要关闭全部交互动画, 请将 `--use-dynamic-effect` 设置为 0  
+     **                            `--list-ol-text-style` 设置为 italic
+     *
+     * 其余配置项请根据需要自行配置
+     * - 0: Close 关闭
+     * - 1: Open 开启
+     **************************************************************************************************/
+    /* Use/Close interactive animations 使用/关闭交互动画 */
+    --use-dynamic-effect: 1;
+
+    /* H1 interactive effect 一级标题交互效果 */
+    --h1-hover-effect: 1;
+
+    /* H2 interactive effect 二级标题交互效果 */
+    --h2-after-effect: 1;
+
+    /* H3 H4 H5 H6 interactive effect 三,四,五,六级标题交互效果 */
+    --h3-6-hover-effect: 1;
+
+    /* Paragraph interactive effect 段落交互效果 */
+    --p-hover-effect: 1;
+
+    /* Image interactive effect 图片交互效果 */
+    --img-hover-effect: 1;
+
+    /* Blockquote interactive effect 引用块交互效果 */
+    --blockquote-hover-effect: 1;
+    
+    /* Alert interactive effect 提示框交互效果 */
+    --alert-hover-effect: 1;
+    
+    /* Strong text interactive effect 粗体文本交互效果 */
+    --strong-hover-effect: 1;
+
+    /* Italic text interactive effect 斜体文本交互效果 */
+    --em-hover-effect: 1;
+
+    /* Underline interactive effect 下划线交互效果 */
+    --u-hover-effect: 1;
+
+    /* Marked text interactive effect 高亮文本交互效果 */
+    --mark-hover-effect: 1;
+
+    /* Deleted text interactive effect 删除线交互效果 */
+    --del-hover-effect: 1;
+
+    /* Inline code block interactive effect 内联代码块交互效果 */
+    --code-hover-effect: 1;
+
+    /* Code block interactive effect 代码块交互效果 */
+    --fence-hover-effect: 1;
+    
+    /* List interactive effect 列表交互效果
+     * The following two values ​​need to be changed synchronously
+     * 下面两个值需同步更改 0-italic or 1-normal */
+    --list-marker-effect: 1;
+    --list-ol-text-style: normal;
+    
+    /* Divider interactive effect 分割线交互效果 */
+    --hr-hover-effect: 1;
+    
+    /* Table interactive effect 表格交互效果 */
+    --table-hover-effect: 1;
+}
+
+html {
+    font-size: 16px;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+html,
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "PingFang SC", "Microsoft YaHei", sans-serif;
+
+    text-align: var(--text-align);
+
+    overflow-x: hidden;
+    color: #282c34;
+    -webkit-font-smoothing: antialiased;
+}
+
+content #write {
+    background-color: #fefefe;
+    max-width: 90%;
+    margin: 0 auto;
+    padding-bottom: 7.5rem;
+}
+
+content #write p {
+    word-spacing: 0.1rem;
+    line-height: 1.9rem;
+    margin: 3px;
+}
+
+content #write ol li {
+    padding-left: 0.5rem;
+}
+
+content #write>h1:first-child {
+    font-weight: normal;
+}
+
+content #write>h5.md-focus:before {
+    top: 2px;
+}
+
+::-moz-selection {
+    background-color: #def2e8;
+}
+
+::selection {
+    background-color: #def2e8;
+}
+
+/* h1-h3 */
+#write h1,
+#write h2,
+#write h3 {
+    font-style: normal;
+}
+
+#write h1,
+#write h2 {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+#write h1 {
+    font-size: 2.4rem;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s ease;
+}
+
+#write h1:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(152, 251, 152, 0), #E8F4EE, rgba(152, 251, 152, 0));
+    transition: transform 0.4s ease;
+    transform: scaleX(0);
+    transform-origin: center;
+    z-index: -1;
+    display: calc(var(--h1-hover-effect) * var(--use-dynamic-effect));
+}
+
+#write h1:hover {
+    transform: scale(calc(1 + 0.1 * var(--h1-hover-effect) * var(--use-dynamic-effect)));
+}
+
+#write h1:hover:before {
+    transform: scaleX(calc(var(--h1-hover-effect) * var(--use-dynamic-effect)));
+}
+
+#write h2 {
+    font-size: 2rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+#write h2:after {
+    content: "";
+    display: block;
+    width: 30rem;
+    height: 2.5px;
+    margin: 0.5rem auto 0;
+    background: linear-gradient(90deg, rgba(106, 158, 69, 0), #3ea174, rgba(106, 158, 69, 0));
+    border-radius: 10px;
+    transform: scaleX(0);
+    transition: transform 0.4s ease, background 0.4s ease;
+}
+
+#write h2:hover:after {
+    transform: scaleX(calc(1 * var(--h2-after-effect) * var(--use-dynamic-effect)));
+}
+
+#write h3 {
+    font-size: 1.8rem;
+}
+
+#write h4 {
+    font-size: 1.5rem;
+}
+
+#write h5 {
+    font-size: 1.3rem;
+}
+
+#write h6 {
+    font-size: 1.2rem;
+}
+
+#write h3,
+#write h4,
+#write h5,
+#write h6 {
+    position: relative;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+#write h3:hover,
+#write h4:hover,
+#write h5:hover,
+#write h6:hover {
+    transform: scale(calc(1 + 0.01 * var(--h3-6-hover-effect) * var(--use-dynamic-effect)));
+}
+
+/* image */
+img {
+    border-radius: 10px;
+    max-width: 100%;
+    display: block;
+    margin: 1em auto;
+    transition: transform 0.15s ease, border-radius 0.15s ease;
+}
+
+img:hover {
+    transform: scale(calc(1 + 0.01 * var(--img-hover-effect) * var(--use-dynamic-effect)));
+    border-radius: calc(10px - 10px * var(--img-hover-effect) * var(--use-dynamic-effect));
+}
+
+/* paragraph */
+p {
+    font-size: 1rem;
+    transition: all 0.25s ease;
+}
+
+p:not(:has(img)):hover {
+    background-color: rgba(123, 181, 147, calc(0.1 * var(--p-hover-effect) * var(--use-dynamic-effect)));
+    padding-left: calc(0.5rem * var(--p-hover-effect) * var(--use-dynamic-effect));
+    padding-right: calc(0.5rem * var(--p-hover-effect) * var(--use-dynamic-effect));
+    border-radius: calc(10px * var(--p-hover-effect) * var(--use-dynamic-effect));
+}
+
+p.md-toc-content:hover {
+    padding-left: 20px;
+}
+
+/* ul ol */
+ul,
+ol {
+    padding-left: 1.2rem;
+}
+
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(calc(1 + 0.3 * var(--list-marker-effect) * var(--use-dynamic-effect)));
+    }
+}
+
+ul .md-list-item::marker {
+    list-style-type: disc;
+    font-size: 27px !important;
+    color: #087725;
+    transition: transform 0.3s;
+}
+
+ul .md-list-item:hover::marker {
+    animation: bounce 0.6s ease-in-out;
+}
+
+ul ul .md-list-item::marker {
+    list-style-type: circle;
+    font-size: 27px;
+    color: #086d21;
+    font-weight: bold;
+    transition: transform 0.3s;
+}
+
+ul ul .md-list-item:hover::marker {
+    animation: bounce 0.6s ease-in-out;
+}
+
+ul ul ul .md-list-item::marker {
+    list-style-type: square;
+    font-size: 27px;
+    color: rgb(87, 160, 19);
+    transition: transform 0.3s;
+}
+
+ul ul ul .md-list-item:hover::marker {
+    animation: bounce 0.6s ease-in-out;
+}
+
+ol .md-list-item::marker {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 20px;
+    font-style: italic;
+    transition: font-weight 0.2s ease, font-style 0.2s ease, color 0.2s ease, font-size 0.2s ease;
+}
+
+ol .md-list-item:hover::marker {
+    font-style: var(--list-ol-text-style);
+    font-weight: calc(500 + 100 * var(--list-marker-effect) * var(--use-dynamic-effect));
+    font-size: calc(20px + 3px * var(--list-marker-effect) * var(--use-dynamic-effect));
+    color: rgb(0, calc(100 * var(--list-marker-effect) * var(--use-dynamic-effect)), 0);
+}
+
+/* blockquote */
+blockquote {
+    padding: 0.5rem 1rem;
+    border-left: 8px solid #2f845e;
+    background-color: #e8f4eb;
+    border-radius: 7px;
+    transition: box-shadow 0.3s ease, border-radius 0.3s ease, border-left 0.3s ease;
+}
+
+blockquote p {
+    margin: 0.1rem 0;
+}
+
+blockquote:hover {
+    border-left: calc(8px + 1px * var(--blockquote-hover-effect) * var(--use-dynamic-effect)) solid #2f845e;
+    box-shadow: calc(0px + 1px * var(--blockquote-hover-effect) * var(--use-dynamic-effect)) calc(1px + 1px * var(--blockquote-hover-effect) * var(--use-dynamic-effect)) calc(3px + 3px * var(--blockquote-hover-effect) * var(--use-dynamic-effect)) rgba(0, 0, 0, calc(0.15 * var(--blockquote-hover-effect) * var(--use-dynamic-effect)));
+    border-radius: calc(7px + 8px * var(--blockquote-hover-effect) * var(--use-dynamic-effect));
+}
+
+blockquote table thead,
+blockquote .md-table-fig .md-table thead {
+    background-color: #3b9457;
+    color: #3b3b3b4e;
+}
+
+blockquote td {
+    background-color: #FAFAFA;
+}
+
+.md-alert.md-alert-tip {
+    padding: 0.5rem 1rem;
+    border-left: 8px solid #1F883D;
+    background-color: #e8f4eb;
+    border-radius: 7px;
+    transition: box-shadow 0.3s ease, border-radius 0.3s ease, border-left 0.3s ease;
+}
+
+.md-alert.md-alert-tip:hover {
+    border-left: calc(8px + 1px * var(--alert-hover-effect) * var(--use-dynamic-effect)) solid #1F883D;
+    box-shadow: calc(0px + 1px * var(--alert-hover-effect) * var(--use-dynamic-effect)) calc(1px + 1px * var(--alert-hover-effect) * var(--use-dynamic-effect)) calc(3px + 3px * var(--alert-hover-effect) * var(--use-dynamic-effect)) rgba(0, 0, 0, calc(0.15 * var(--alert-hover-effect) * var(--use-dynamic-effect)));
+    border-radius: calc(7px + 8px * var(--alert-hover-effect) * var(--use-dynamic-effect));
+}
+
+.md-alert.md-alert-tip table thead,
+.md-alert.md-alert-tip .md-table-fig .md-table thead {
+    background-color: #3b9457;
+    color: #fafbfa;
+}
+
+.md-alert.md-alert-caution {
+    padding: 0.5rem 1rem;
+    border-left: 8px solid #CF222E;
+    background-color: #f5ecec;
+    border-radius: 7px;
+    transition: box-shadow 0.3s ease, border-radius 0.3s ease, border-left 0.3s ease;
+}
+
+.md-alert.md-alert-caution:hover {
+    border-left: calc(8px + 1px * var(--alert-hover-effect) * var(--use-dynamic-effect)) solid #CF222E;
+    box-shadow: calc(0px + 1px * var(--alert-hover-effect) * var(--use-dynamic-effect)) calc(1px + 1px * var(--alert-hover-effect) * var(--use-dynamic-effect)) calc(3px + 3px * var(--alert-hover-effect) * var(--use-dynamic-effect)) rgba(0, 0, 0, calc(0.15 * var(--alert-hover-effect) * var(--use-dynamic-effect)));
+    border-radius: calc(7px + 8px * var(--alert-hover-effect) * var(--use-dynamic-effect));
+}
+
+.md-alert.md-alert-caution p:hover {
+    background-color: #cf222d0a;
+}
+
+.md-alert.md-alert-caution ::selection {
+    background-color: #cf222d17;
+}
+
+.md-alert.md-alert-caution strong,
+.md-alert.md-alert-caution em,
+.md-alert.md-alert-caution code,
+.md-alert.md-alert-caution a {
+    color: #CF222E;
+}
+
+.md-alert.md-alert-caution table thead,
+.md-alert.md-alert-caution .md-table-fig .md-table thead {
+    background-color: #d83c46;
+    color: #fafbfa;
+}
+
+.md-alert.md-alert-caution ul .md-list-item::marker,
+.md-alert.md-alert-caution ul ul .md-list-item::marker,
+.md-alert.md-alert-caution ul ul .md-list-item::marker,
+.md-alert.md-alert-caution ol .md-list-item:hover::marker {
+    color: #CF222E;
+}
+
+.md-alert.md-alert-warning {
+    padding: 0.5rem 1rem;
+    border-left: 8px solid #9A6700;
+    background-color: #f4f1e9;
+    border-radius: 7px;
+    transition: box-shadow 0.3s ease, border-radius 0.3s ease, border-left 0.3s ease;
+}
+
+.md-alert.md-alert-warning:hover {
+    border-left: calc(8px + 1px * var(--alert-hover-effect) * var(--use-dynamic-effect)) solid #9A6700;
+    box-shadow: calc(0px + 1px * var(--alert-hover-effect) * var(--use-dynamic-effect)) calc(1px + 1px * var(--alert-hover-effect) * var(--use-dynamic-effect)) calc(3px + 3px * var(--alert-hover-effect) * var(--use-dynamic-effect)) rgba(0, 0, 0, calc(0.15 * var(--alert-hover-effect) * var(--use-dynamic-effect)));
+    border-radius: calc(7px + 8px * var(--alert-hover-effect) * var(--use-dynamic-effect));
+}
+
+.md-alert.md-alert-warning p:hover {
+    background-color: #9a67000a;
+}
+
+.md-alert.md-alert-warning ::selection {
+    background-color: #9a670017;
+}
+
+.md-alert.md-alert-warning strong,
+.md-alert.md-alert-warning em,
+.md-alert.md-alert-warning code,
+.md-alert.md-alert-warning a {
+    color: #9A6700;
+}
+
+.md-alert.md-alert-warning table thead,
+.md-alert.md-alert-warning .md-table-fig .md-table thead {
+    background-color: #b7831c;
+    color: #fafbfa;
+}
+
+.md-alert.md-alert-warning ul .md-list-item::marker,
+.md-alert.md-alert-warning ul ul .md-list-item::marker,
+.md-alert.md-alert-warning ul ul .md-list-item::marker,
+.md-alert.md-alert-warning ol .md-list-item:hover::marker {
+    color: #9A6700;
+}
+
+.md-alert.md-alert-important {
+    padding: 0.5rem 1rem;
+    border-left: 8px solid #8250DF;
+    background-color: #eae6f2;
+    border-radius: 7px;
+    transition: box-shadow 0.3s ease, border-radius 0.3s ease, border-left 0.3s ease;
+}
+
+.md-alert.md-alert-important:hover {
+    border-left: calc(8px + 1px * var(--alert-hover-effect) * var(--use-dynamic-effect)) solid #8250DF;
+    box-shadow: calc(0px + 1px * var(--alert-hover-effect) * var(--use-dynamic-effect)) calc(1px + 1px * var(--alert-hover-effect) * var(--use-dynamic-effect)) calc(3px + 3px * var(--alert-hover-effect) * var(--use-dynamic-effect)) rgba(0, 0, 0, calc(0.15 * var(--alert-hover-effect) * var(--use-dynamic-effect)));
+    border-radius: calc(7px + 8px * var(--alert-hover-effect) * var(--use-dynamic-effect));
+}
+
+.md-alert.md-alert-important p:hover {
+    background-color: #8250df0a;
+}
+
+.md-alert.md-alert-important ::selection {
+    background-color: #8250df17;
+}
+
+.md-alert.md-alert-important strong,
+.md-alert.md-alert-important em,
+.md-alert.md-alert-important code,
+.md-alert.md-alert-important a {
+    color: #8250DF;
+}
+
+.md-alert.md-alert-important table thead,
+.md-alert.md-alert-important .md-table-fig .md-table thead {
+    background-color: #9566ee;
+    color: #fafbfa;
+}
+
+.md-alert.md-alert-important ul .md-list-item::marker,
+.md-alert.md-alert-important ul ul .md-list-item::marker,
+.md-alert.md-alert-important ul ul .md-list-item::marker,
+.md-alert.md-alert-important ol .md-list-item:hover::marker {
+    color: #8250DF;
+}
+
+.md-alert.md-alert-note {
+    padding: 0.5rem 1rem;
+    border-left: 8px solid #0969DA;
+    background-color: #e5ebf1;
+    border-radius: 7px;
+    transition: box-shadow 0.3s ease, border-radius 0.3s ease, border-left 0.3s ease;
+}
+
+.md-alert.md-alert-note:hover {
+    border-left: calc(8px + 1px * var(--alert-hover-effect) * var(--use-dynamic-effect)) solid #0969DA;
+    box-shadow: calc(0px + 1px * var(--alert-hover-effect) * var(--use-dynamic-effect)) calc(1px + 1px * var(--alert-hover-effect) * var(--use-dynamic-effect)) calc(3px + 3px * var(--alert-hover-effect) * var(--use-dynamic-effect)) rgba(0, 0, 0, calc(0.15 * var(--alert-hover-effect) * var(--use-dynamic-effect)));
+    border-radius: calc(7px + 8px * var(--alert-hover-effect) * var(--use-dynamic-effect));
+}
+
+.md-alert.md-alert-note p:hover {
+    background-color: #0969da0a;
+}  
+
+.md-alert.md-alert-note ::selection {
+    background-color: #0969da17;
+}
+
+.md-alert.md-alert-note strong,
+.md-alert.md-alert-note em,
+.md-alert.md-alert-note code,
+.md-alert.md-alert-note a {
+    color: #0969DA;
+}
+
+.md-alert.md-alert-note table thead,
+.md-alert.md-alert-note .md-table-fig .md-table thead {
+    background-color: #3581d9;
+    color: #fafbfa;
+}
+
+.md-alert.md-alert-note ul .md-list-item::marker,
+.md-alert.md-alert-note ul ul .md-list-item::marker,
+.md-alert.md-alert-note ul ul .md-list-item::marker,
+.md-alert.md-alert-note ol .md-list-item:hover::marker {
+    color: #0969DA;
+}
+
+.md-alert p {
+    margin: 0.1rem 0;
+}
+
+blockquote code,
+.md-alert.md-alert-tip code,
+.md-alert.md-alert-caution code,
+.md-alert.md-alert-warning code,
+.md-alert.md-alert-important code,
+.md-alert.md-alert-note code {
+    background-color: #67676716;
+}
+
+.md-alert.md-alert-tip .md-fences::before,
+.md-alert.md-alert-caution .md-fences::before,
+.md-alert.md-alert-warning .md-fences::before,
+.md-alert.md-alert-important .md-fences::before,
+.md-alert.md-alert-note .md-fences::before {
+    background: #fc625d;
+    box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
+}
+
+blockquote td,
+.md-alert.md-alert-tip td,
+.md-alert.md-alert-caution td,
+.md-alert.md-alert-warning td,
+.md-alert.md-alert-important td,
+.md-alert.md-alert-note td {
+    background-color: #FAFAFA;
+}
+
+.md-alert-text-container {
+    font-size: 20px;
+}
+
+/* horizontal line */
+hr {
+    position: relative;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border: none;
+    border-top: 2px solid transparent;
+    background-image: linear-gradient(90deg, #5ea67c, #2f845e, #5ea67c);
+    height: 1.5px;
+    overflow: visible;
+    color: #abb2bf;
+    opacity: 0.8;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    animation: dashAnimation 0.5s ease-in-out;
+
+    transition: transform 0.3s ease, background-position 0.3s ease, height 0.3s ease;
+    background-size: 200% 100%;
+    background-position: 0 0;
+}
+
+hr:hover {
+    background-position: calc(100% * var(--hr-hover-effect) * var(--use-dynamic-effect)), 0;
+    transform: scale(calc(1 + 0.02 * var(--hr-hover-effect) * var(--use-dynamic-effect)));
+    height: calc(1.5px + 1px * var(--hr-hover-effect) * var(--use-dynamic-effect));
+}
+
+@keyframes dashAnimation {
+    0% {
+        width: calc(100% - 100% * var(--hr-hover-effect) * var(--use-dynamic-effect));
+        opacity: calc(1 - 1 * var(--hr-hover-effect) * var(--use-dynamic-effect));
+    }
+
+    100% {
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+/* table */
+table,
+.md-table-fig .md-table {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    border-collapse: separate;
+    overflow: hidden;
+}
+
+table th,
+table td,
+.md-table-fig .md-table th,
+.md-table-fig .md-table td {
+    padding: 10px 16px;
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    transition: font-size 0.3s ease;
+}
+
+table th:hover,
+table td:hover,
+.md-table-fig .md-table th:hover,
+.md-table-fig .md-table td:hover {
+    font-size: calc(100% + 10% * var(--table-hover-effect) * var(--use-dynamic-effect));
+}
+
+table th:first-child,
+table td:first-child,
+.md-table-fig .md-table th:first-child,
+.md-table-fig .md-table td:first-child {
+    border-left: 0;
+}
+
+table thead,
+.md-table-fig .md-table thead {
+    background-color: #eff5f2;
+    color: #06621e;
+}
+
+table caption+thead tr:first-child th,
+table caption+thead tr:first-child td,
+table colgroup+thead tr:first-child th,
+table colgroup+thead tr:first-child td,
+table thead+tbody tr:first-child th,
+table thead+tbody tr:first-child td,
+table thead:first-child tr:first-child th,
+table thead:first-child tr:first-child td,
+.md-table-fig .md-table caption+thead tr:first-child th,
+.md-table-fig .md-table caption+thead tr:first-child td,
+.md-table-fig .md-table colgroup+thead tr:first-child th,
+.md-table-fig .md-table colgroup+thead tr:first-child td,
+.md-table-fig .md-table thead+tbody tr:first-child th,
+.md-table-fig .md-table thead+tbody tr:first-child td,
+.md-table-fig .md-table thead:first-child tr:first-child th,
+.md-table-fig .md-table thead:first-child tr:first-child td {
+    border-top: 0;
+}
+
+table tbody+tbody,
+.md-table-fig .md-table tbody+tbody {
+    border-top: 2px solid #E8F4EE;
+}
+
+.md-table-fig .md-table-edit {
+    background-color: #ffffff;
+}
+
+.md-table-fig .md-table-edit .btn-default:hover {
+    background-color: #E8F4EE;
+}
+
+.md-table-fig .md-table-edit .md-table-resize-popover {
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    border: none;
+    padding: 0;
+    background-color: transparent;
+}
+
+.md-table-fig .md-table-edit .md-table-resize-popover .arrow {
+    top: -10px;
+}
+
+.md-table-fig .md-table-edit .md-table-resize-popover .arrow::after {
+    border-bottom-color: #ddd;
+}
+
+.md-table-fig .md-table-edit .md-table-resize-popover .md-reset {
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.md-table-fig .md-table-edit .md-table-resize-popover .md-reset input {
+    color: #282c34 !important;
+}
+
+.md-table-fig .md-table-edit .md-table-resize-popover .md-reset input#md-grid-width,
+.md-table-fig .md-table-edit .md-table-resize-popover .md-reset input#md-grid-height {
+    text-align: center;
+}
+
+.md-table-fig .md-table-edit .md-table-resize-popover .popover-title {
+    border-top: 1px solid #eee;
+}
+
+/* yaml front matter */
+#write pre.md-meta-block {
+    background: #eaf3ec;
+    color: #3f8a5f;
+    border: 0;
+    border-radius: 6px;
+    line-height: 1.3rem;
+    padding: 0.5rem 1.5rem;
+    margin-top: -1rem;
+    margin-bottom: 2rem;
+}
+
+/* table of contents */
+.md-toc {
+    margin-bottom: 1.25rem;
+}
+
+/* task list */
+.md-task-list-item>input::before {
+    content: "";
+    position: absolute;
+    top: -1.5px;
+    left: -3.5px;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #737373;
+    background: #fff;
+    -webkit-transition: background-color 200ms ease-in-out;
+    transition: background-color 200ms ease-in-out;
+}
+
+.md-task-list-item>input::after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 1px;
+    width: 0.6rem;
+    height: 0.3rem;
+    border:2px solid #fff;
+    border-top: 0;
+    border-right: 0;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    opacity: 0;
+    -webkit-transition: opacity 200ms ease-in-out;
+    transition: opacity 200ms ease-in-out;
+}
+
+.md-task-list-item>input:checked::before {
+    background-color: #399b6f;
+    border: none;
+}
+
+.md-task-list-item>input:checked::after {
+    opacity: 1;
+}
+
+.md-task-list-item.task-list-done {
+    text-decoration: line-through;
+    color: #999;
+}
+
+/* footnote */
+.footnotes {
+    font-size: 1rem;
+}
+
+/* math,html block common */
+.mathjax-block[contenteditable="false"]:active,
+.mathjax-block[contenteditable="false"]:focus,
+.md-htmlblock[contenteditable="false"]:active,
+.md-htmlblock[contenteditable="false"]:focus {
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+.mathjax-block:hover .md-rawblock-container,
+.mathjax-block:hover .md-rawblock-tooltip,
+.md-htmlblock:hover .md-rawblock-container,
+.md-htmlblock:hover .md-rawblock-tooltip {
+    background-color: #f5f6f7;
+    -webkit-animation: showRawBlockTooltip 0s linear;
+    animation: showRawBlockTooltip 0s linear;
+}
+
+.mathjax-block:hover .md-rawblock-container,
+.md-htmlblock:hover .md-rawblock-container {
+    border-radius: 6px 0 6px 6px;
+}
+
+.mathjax-block .md-rawblock-control,
+.md-htmlblock .md-rawblock-control {
+    background-color: #f5f6f7;
+}
+
+.mathjax-block .md-rawblock-tooltip,
+.md-htmlblock .md-rawblock-tooltip {
+    background-color: #f5f6f7;
+    -webkit-animation: showRawBlockTooltip 0s linear;
+    animation: showRawBlockTooltip 0s linear;
+    border-radius: 4px 4px 0 0;
+}
+
+/* math block */
+.mathjax-block .md-mathblock-panel .code-tooltip[contenteditable="false"] {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.mathjax-block .md-mathblock-panel .md-rawblock-before {
+    padding-top: 6px;
+    border-top-left-radius: 6px;
+}
+
+.mathjax-block .md-mathblock-panel .md-rawblock-after {
+    padding-bottom: 6px;
+}
+
+.mathjax-block .md-mathblock-panel .md-rawblock-input .cm-s-inner {
+    color: #282c34;
+}
+
+.mathjax-block .md-mathblock-panel .md-rawblock-input .cm-s-inner .CodeMirror-lines {
+    color: #282c34;
+}
+
+.mathjax-block .md-mathblock-panel .md-rawblock-input .cm-s-inner .CodeMirror-gutters {
+    background-color: #f5f6f7;
+}
+
+.mathjax-block .md-mathblock-panel .md-rawblock-input .cm-s-inner .CodeMirror-selected,
+.mathjax-block .md-mathblock-panel .md-rawblock-input .cm-s-inner .CodeMirror-selectedtext {
+    background-color: #bac6e9 !important;
+}
+
+.mathjax-block .md-math-container {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/* html block */
+.md-htmlblock .md-htmlblock-panel {
+    border-radius: 10px;
+    border-top-right-radius: 0;
+    padding-left: 6px;
+    padding-right: 6px;
+}
+
+.md-htmlblock .md-htmlblock-panel .md-rawblock-input {
+    padding-top: 14px;
+    padding-bottom: 10px;
+}
+
+.md-htmlblock .md-htmlblock-panel .md-rawblock-input .cm-s-inner .CodeMirror-selected,
+.md-htmlblock .md-htmlblock-panel .md-rawblock-input .cm-s-inner .CodeMirror-selectedtext {
+    background-color: #def2e8 !important;
+}
+
+/* strong */
+strong {
+    font-weight: bold;
+    color: #06621e;
+    font-size: 1.05rem;
+    transition: font-size 0.3s ease, padding 0.3s ease;
+    display: inline-block;
+    margin: 0 2px;
+}
+
+strong:hover {
+    font-size: calc(1.05rem + 0.05rem * var(--strong-hover-effect) * var(--use-dynamic-effect));
+    padding: calc(0px + 3px * var(--strong-hover-effect) * var(--use-dynamic-effect));
+}
+
+/* emphasis */
+em {
+    background-color: inherit;
+    color: #000000;
+    transition: all 0.3s ease;
+    padding-left: 1px;
+    padding-right: 1px;
+}
+
+em:hover {
+    color: #006400;
+    font-weight: calc(500 + 100 * var(--em-hover-effect) * var(--use-dynamic-effect));
+    padding-left: calc(1px + 2px * var(--em-hover-effect) * var(--use-dynamic-effect));
+    padding-right: calc(1px + 2px * var(--em-hover-effect) * var(--use-dynamic-effect));
+}
+
+/* underline */
+u {
+    background-color: inherit;
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 2px solid rgb(9, 156, 70);
+    padding-bottom: 2.5px;
+    transition: all 0.3s ease;
+}
+
+u:hover {
+    border: calc(2px * var(--u-hover-effect) * var(--use-dynamic-effect)) solid rgb(9, 156, 70);
+    padding: calc(0px + 4px * var(--u-hover-effect) * var(--use-dynamic-effect));
+    margin: calc(0px + 4px * var(--u-hover-effect) * var(--use-dynamic-effect));
+    border-radius: calc(0px + 7px * var(--u-hover-effect) * var(--use-dynamic-effect));
+    border-bottom: 2px solid rgb(9, 156, 70);
+    padding-bottom: 2.5px;
+}
+
+/* code */
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code {
+    font-size: inherit;
+}
+
+code {
+    background-color: rgba(221, 235, 213, 0.5);
+    color: #359d09;
+    font-family: "Fira Code", Consolas, "Lucida Console", "Courier", monospace, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 550;
+    margin: 0 2px;
+    padding: 3px 3px 1px;
+    border-radius: 7px;
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+
+code:hover {
+    background-color: rgba(221, 235, 213, calc(0.5 + 0.5 * var(--code-hover-effect) * var(--use-dynamic-effect)));
+    font-weight: calc(550 + 150 * var(--code-hover-effect) * var(--use-dynamic-effect));
+    padding: 3px 3px calc(1px + 2px * var(--code-hover-effect) * var(--use-dynamic-effect));
+}
+
+/* strike */
+del {
+    color: rgba(50, 100, 50, 0.5);
+    text-decoration: line-through;
+    text-decoration-color: rgba(76, 175, 80, 0.7);
+    text-decoration-thickness: 1.5px;
+    font-style: italic;
+    opacity: 0.8;
+    transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+del:hover {
+    color: rgba(50, 100, 50, calc(0.5 + 0.5 * var(--del-hover-effect) * var(--use-dynamic-effect)));
+    opacity: calc(0.8 + 0.2 * var(--del-hover-effect) * var(--use-dynamic-effect));
+    text-decoration-color: rgba(76, 175, 80, calc(0.7 + 0.3 * var(--del-hover-effect) * var(--use-dynamic-effect)));
+}
+
+/* hightlight */
+mark {
+    font-weight: 500;
+    background-color: #aee6c3;
+    color: inherit;
+    margin: 0 2px;
+    padding: 3px 3px 2.5px;
+    border-radius: 0px;
+    transition: all 0.3s ease
+}
+
+mark:hover {
+    border-radius: calc(0px + 7px * var(--mark-hover-effect) * var(--use-dynamic-effect));
+    background-color: rgba(174, 230, 195, calc(1 - 0.5 * var(--mark-hover-effect) * var(--use-dynamic-effect)));
+    padding: 3px 3px calc(2.5px + 1.5px * var(--mark-hover-effect) * var(--use-dynamic-effect));
+}
+
+/* hyperlink */
+a {
+    background-color: inherit;
+    color: #0c8f94;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #02502a;
+}
+
+a img {
+    border: none;
+}
+
+/* code fences */
+.md-fences {
+    font-family: "Fira Code", Consolas, "Lucida Console", "Courier", monospace, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #2f4f4f;
+    background-color: #FFFFFF;
+    padding: 17px;
+    padding-top: 32px;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.md-fences::before {
+    background: #015e19;
+    border-radius: 50%;
+    box-shadow: 20px 0 #068f28, 40px 0 rgb(116, 219, 38);
+    content: ' ';
+    height: 12px;
+    width: 12px;
+    position: absolute;
+    left: 13px;
+    top: 12px;
+    transition: all 0.3s ease;
+}
+
+/* 1. Scale animation */
+/* @keyframes bounce-code {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.01); 
+    }
+} */
+
+/* 2. Displacement Animation */
+@keyframes bounce-code {
+
+    0%,
+    100% {
+        width: 100%;
+        height: 100%;
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(calc(-3px * var(--fence-hover-effect) * var(--use-dynamic-effect)), calc(-3px * var(--fence-hover-effect) * var(--use-dynamic-effect)));
+    }
+}
+
+.md-fences:hover {
+    animation: bounce-code 0.5s ease-in-out;
+    box-shadow: 0 calc(1px + 1px * var(--fence-hover-effect) * var(--use-dynamic-effect)) calc(3px + 1px * var(--fence-hover-effect) * var(--use-dynamic-effect)) rgba(0, 0, 0, calc(0.15 + 0.05 * var(--fence-hover-effect) * var(--use-dynamic-effect)));
+}
+
+.md-fences:hover::before {
+    background: #fc625d;
+    box-shadow: 20px 0 #fdbc40, 40px 0 #35cd4b;
+}
+
+.code-tooltip[contenteditable="false"] {
+    border-radius: 7px;
+}
+
+.cm-s-inner .CodeMirror-linenumber {
+    margin-left: 7px;
+    margin-right: 3px;
+    color: #2f845e;
+}
+
+/* 关键字 */
+.cm-s-inner .cm-keyword {
+    color: #222fa7;
+    font-weight: bold;
+}
+
+/* 操作符 */
+.cm-s-inner .cm-operator {
+    color: #006400;
+}
+
+/* 变量 */
+.cm-s-inner .cm-variable {
+    color: #239d37;
+    font-weight: bold;
+}
+
+/* 函数参数 */
+.cm-s-inner .cm-variable-2 {
+    color: #108979;
+}
+
+/* 类名 */
+.cm-s-inner .cm-variable-3 {
+    color: #183da2;
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* 内建函数 */
+.cm-s-inner .cm-builtin {
+    color: #006400;
+    font-style: italic;
+}
+
+/* 常量 */
+.cm-s-inner .cm-atom {
+    color: #3b8f8f;
+}
+
+/* 数字 */
+.cm-s-inner .cm-number {
+    color: #3e19cf;
+}
+
+/* 函数定义 */
+.cm-s-inner .cm-def {
+    color: #10623e;
+    font-weight: bold;
+}
+
+/* 字符串 */
+.cm-s-inner .cm-string {
+    color: #0264bf;
+    font-style: italic;
+}
+
+/* 模板字符串 */
+.cm-s-inner .cm-string-2 {
+    color: #6b8e23;
+}
+
+/* 注释 */
+.cm-s-inner .cm-comment {
+    color: #6a737d;
+    font-style: italic;
+}
+
+/* HTML 标签 */
+.cm-s-inner .cm-tag {
+    color: #042c99;
+}
+
+/* HTML 标签属性 */
+.cm-s-inner .cm-attribute {
+    color: #2b34e3;
+}
+
+/* CSS 属性 */
+.cm-s-inner .cm-property {
+    color: #2e8b57;
+}
+
+/* 选择器 */
+.cm-s-inner .cm-qualifier {
+    color: #2e8b57;
+}
+
+/* 元信息 */
+.cm-s-inner .cm-meta {
+    color: #099f8b;
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* 链接 */
+.cm-s-inner .cm-link {
+    color: #1565c0;
+    text-decoration: underline;
+}
+
+/* 错误信息 */
+.cm-s-inner .cm-error {
+    color: #d32f2f;
+    background-color: #fdd;
+}
+
+/* 布尔值 */
+.cm-s-inner .cm-boolean {
+    color: #228b22;
+    font-weight: bold;
+}
+
+/* 类型 */
+.cm-s-inner .cm-type {
+    color: #1565c0;
+    font-weight: bold;
+}
+
+/* 标题 */
+.cm-s-inner .cm-header {
+    color: #2e8b57;
+    font-weight: bold;
+}
+
+/* 引用 */
+.cm-s-inner .cm-quote {
+    color: #3503a8;
+    font-style: italic;
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #FAFAFA;
+}
+
+::-webkit-scrollbar-thumb {
+    background: -webkit-gradient(linear, left bottom, right top, from(#429a1f), to(#1b5b3e)) !important;
+    background: linear-gradient(to top right, #4aad23, #1b5b3e) !important;
+    border-radius: 5px;
+}
+
+/* find dialog */
+#typora-quick-open {
+    background-color: #fff;
+    color: #282c34;
+}
+
+#typora-quick-open .typora-quick-open-item.active {
+    background-color: #bac6e9 !important;
+}
+
+#typora-quick-open .ty-quick-open-category-title {
+    border-top: 1px solid #eee !important;
+}
+
+/* modal dialog */
+#common-dialog .modal-dialog .modal-content {
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    background-color: #f5f6f7;
+    border: none;
+    border-radius: 6px;
+}
+
+#common-dialog .modal-dialog .modal-content .modal-footer .btn-default:hover {
+    background-color: #bac6e9 !important;
+}
+
+/* preferences */
+.ty-preferences {
+    font-family: "Fira Code", Consolas, "Lucida Console", "Courier", monospace, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #282c34;
+}
+
+.ty-preferences .window-header h2 {
+    font-size: 1.6rem;
+}
+
+.ty-preferences .sidebar {
+    font-size: 1.4rem;
+}
+
+.ty-preferences .sidebar .nav-group-item.active,
+.ty-preferences .sidebar .nav-group-item:active {
+    color: #efefef;
+    background-color: #2f845e;
+}
+
+/* sidebar includes file-tree,articles and outline*/
+.html-for-mac #typora-sidebar {
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+/* focus mode/typewriter mode notification  */
+#md-notification {
+    background-color: #fff !important;
+}
+
+#md-notification #ty-surpress-mode-warning-close-btn:hover {
+    background-color: #bac6e9 !important;
+}
+
+/* Unibody sidebar */
+#megamenu-menu-sidebar {
+    color: #282c34;
+    font-size: 1rem;
+}
+
+#megamenu-menu-sidebar #megamenu-menu-list {
+    border-top-color: #2F353A;
+    background-color: #2F353A;
+}
+
+#megamenu-menu-sidebar #megamenu-menu-list li a {
+    color: #e3dede !important;
+}
+
+#megamenu-menu-sidebar #megamenu-menu-list li a.active,
+#megamenu-menu-sidebar #megamenu-menu-list li a:hover {
+    background-color: #3e4249 !important;
+}
+
+#megamenu-menu-sidebar #megamenu-menu-list li a#m-saved {
+    background-color: transparent !important;
+}
+
+.megamenu-opened .megamenu-menu {
+    left: 0;
+}
+
+#megamenu-content {
+    color: #000;
+}
+
+/* sidebar */
+#typora-sidebar .info-panel-tab-wrapper .info-panel-tab .info-panel-tab-border {
+    background-color: #2f845e;
+    border-radius: 4px;
+}
+
+#typora-sidebar .sidebar-osx-tab .sidebar-tabs {
+    border-bottom-color: transparent;
+}
+
+#typora-sidebar #sidebar-content .file-list-item {
+    border-bottom: 1px solid #eee;
+}
+
+#typora-sidebar #sidebar-content .file-list-item.active {
+    background-color: rgba(66, 185, 131, 0.1);
+    border-left: 4px solid #2f845e;
+}
+
+#typora-sidebar #sidebar-content .ty-sidebar-search-panel {
+    border-bottom: 1px solid #eee;
+}
+
+#typora-sidebar #sidebar-content .ty-sidebar-search-panel .searchpanel-search-option-btn {
+    background-color: #fff;
+}
+
+#typora-sidebar #sidebar-content .sidebar-content-content .file-tree-node:not(.file-node-root):hover>.file-node-background {
+    border-left: 4px solid #2f845e;
+    background-color: rgba(66, 185, 131, 0.1);
+}
+
+#typora-sidebar #sidebar-content .sidebar-content-content .file-tree-node.active>.file-node-background {
+    border-color: #2f845e;
+    background-color: rgba(66, 185, 131, 0.1);
+}
+
+#typora-sidebar #sidebar-content .sidebar-content-content #file-library-list-children .file-library-file-node:hover {
+    border-left: 4px solid #2f845e;
+    background-color: rgba(66, 185, 131, 0.1);
+}
+
+#typora-sidebar #sidebar-content #outline-content .no-collapse-outline .outline-item {
+    line-height: 1.375rem;
+    font-size: 1rem;
+}
+
+#typora-sidebar #sidebar-content #outline-content .outline-expander:before {
+    color: inherit;
+    font-size: 14px;
+    top: auto;
+    content: "\f0da";
+    font-family: FontAwesome;
+}
+
+#typora-sidebar #sidebar-content #outline-content .outline-expander:hover:before,
+#typora-sidebar #sidebar-content #outline-content .outline-item-open>.outline-item>.outline-expander:before {
+    content: "\f0d7";
+}
+
+#typora-sidebar #sidebar-content #outline-content .outline-item:hover {
+    background-color: #E8F4EE !important;
+}
+
+#typora-sidebar #ty-sidebar-footer {
+    border-top: 1px solid #eee;
+}
+
+#typora-sidebar #ty-sidebar-footer .sidebar-footer-item:hover {
+    background-color: #caebdb !important;
+}
+
+#typora-sidebar #ty-sidebar-footer #sidebar-files-menu {
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+/* dropdown menu */
+.dropdown-menu>.show+.menuitem-group-label.show {
+    border-top: 1px solid #eee !important;
+}
+
+.dropdown-menu li a {
+    color: #282c34 !important;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #E8F4EE !important;
+}
+
+.dropdown-menu .divider {
+    border-color: #fff;
+}
+
+/* sidebar-files-menu,toc-dropmenu,suggest common */
+#sidebar-files-menu,
+#toc-dropmenu,
+.auto-suggest-container {
+    background-color: #fff;
+    -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    border: none;
+}
+
+#toc-dropmenu .outline-item:hover {
+    background-color: #caebdb !important;
+}
+
+/* emoji,fences,word suggest */
+.auto-suggest-container {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.auto-suggest-container li.active,
+.auto-suggest-container li:hover {
+    background-color: #d4eee1 !important;
+}
+
+/* source code mode */
+#typora-source {
+    font-family: "Fira Code", Consolas, "Lucida Console", "Courier", monospace, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #6a6a6a;
+}
+
+#typora-source .cm-s-typora-default .cm-header,
+#typora-source .cm-s-typora-default .cm-property,
+#typora-source .CodeMirror.cm-s-typora-default div.CodeMirror-cursor {
+    color: #428bca;
+}
+
+#typora-source .cm-s-typora-default .cm-atom,
+#typora-source .cm-s-typora-default .cm-number {
+    color: #777777;
+}
+
+#typora-source .CodeMirror-selectedtext {
+    background-color: transparent !important;
+}
+
+.typora-node .file-list-item-parent-loc,
+.typora-node .file-list-item-time,
+.typora-node .file-list-item-summary {
+    font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+
+</style><title>马克思主义基本原理</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='马克思主义基本原理'><span>马克思主义基本原理</span></h1><hr /><p><span>【适用人群：本文适用于备考马克思主义基本原理的理工科学生】</span></p><p><span>【打（</span><span>*</span><span>）代表不考。】</span></p><p><span>【文档最后有对应教材版本信息等，作者在整理中途的一些决定导致一些重要信息安排于文档结尾，应先行参考。】</span></p><p><span>【</span></p><p><span>结构安排的解释：</span></p><p><span>教材是三个部分的综合体，这三个部分是：马克思主义哲学，马克思主义政治经济学，科学社会主义。</span></p><p><span>考试的重点在于马克思主义哲学+部分马克思主义政治经济学+少量社会主义科学。</span></p><p><span>那么，一般的安排就是：按照课本内容，分为三个部分，在按照对应章节整理；或者，按照考点整理（根据空卡或其他政治考研网课）。</span></p><p><span>但是，为了兼顾应试和理论体系的搭建，我对本文档的安排如下：</span></p><ol start='' ><li><p><span>在【1级标题：马克思主义基本原理】中，整理【2级标题：教材导论章节】和部分【2级标题：教材第一章】的内容；</span></p></li><li><p><span>在【1级标题：马克思主义哲学】中，整理对应的大考点，每个大考点前面有单个阿拉伯数字作为标号；</span></p></li><li><p><span>将考点【6 政治经济学】单独作为【1级标题：6 政治经济学】呈现。</span></p></li><li><p><span>考点整理时会参考教材和考研资料，两者都很重要。</span></p></li></ol><p><span>】</span></p><p><span>【Markdown编写环境：Typora】</span></p><p><span>【Markdown主题：Typora官网主题-Spring】</span></p><hr /><h2 id='0-导论'><span>0 导论</span></h2><h3 id='1-什么是马克思主义'><span>1 什么是马克思主义</span></h3><p><span>马克思主义是由马克思、恩格斯创立并为后继者所不断发展的科学理论体系，是关于自然、社会和人类思维发展一般规律的学说，是关于</span><strong><span>社会主义必然代替资本主义</span></strong><span>、最终实现共产主义的学说，是关于无 产阶级解放、全人类解放和每个人自由而全面发展的学说，是无产阶级政党和社会主义国家的指导思想，是指引人民创造美好生活的行动指南。</span></p><p><strong><span>马克思主义哲学</span></strong><span>、</span><strong><span>马克思主义政治经济学</span></strong><span>和</span><strong><span>科学社会主义</span></strong><span>是其三个基本组成部分。</span></p><p><span>马克思主义</span><strong><span>基本原理</span></strong><span>是对马克思主义立场观点方法的</span><strong><span>集中概括</span></strong><span>，是马克思主义在其形成、发展和运用过程中经过实践反复检验而确立起来的具有普遍真理性的理论。</span></p><h4 id='马的三个基本'><span>马的三个基本</span></h4><ol start='' ><li><p><span>马克思主义的</span><strong><span>基本立场</span></strong><span>，是马克思主义观察、分析和解决问题的根本立足点和出发点。</span></p><p><span>马克思主义</span><strong><span>以无产阶级的解放和全人类的解放为己任</span></strong><span>， 以</span><strong><span>人的自由而全面发展为美好目标</span></strong><span>，以</span><strong><span>人民为中心</span></strong><span>，坚持</span><strong><span>一切为了人民</span></strong><span>， </span><strong><span>一切依靠人民</span></strong><span>，</span><strong><span>全心全意为人民谋幸福</span></strong><span>。</span></p></li><li><p><span>马克思主义的</span><strong><span>基本观点</span></strong><span>，是关于自然、社会和人类思维发展一般规律的科学认识，是对资本主义社会和社会主义</span><strong><span>社会发展规律的科学认识</span></strong><span>，是对人类思想成果和社会实践经验的科学总结。</span></p><p><span>具体内容就是这本书的所有内容。也就是说本书中的所有原理都是马克思主义的基本观点。</span></p></li><li><p><span>马克思主义的基本方法，是建立在</span><strong><span>辩证唯物主义</span></strong><span>和</span><strong><span>历史唯物主义世界观</span></strong><span>和方法论基础上，指导我们正确认识世界和改造世界的思想方法和工作方法，主要包括实事求是的方法、辩证分析的方法、社会基本矛盾和主要矛盾分析的方法、历史分析的方法、阶级分析的方法、群众路线的方法等。</span><strong><span>就是这本书中用到的视角</span></strong><span>。</span></p></li></ol><h3 id='2-马克思主义的创立与发展'><span>2 马克思主义的创立与发展</span></h3><hr /><p><span>马克思主义产生于19世纪40年代。</span></p><p><span>无产阶级在反抗资产阶级剥削和压迫的斗争中，逐步走向自觉，并迫切渴望科学的理论指导。</span></p><p><span>德国古典哲学、英国古典政治经济学、英法空想社会主义为马克思主义的创立提供了直接的理论来源。</span></p><p><span>唯物史观和剩余价值学说是马克思一生的两个伟大发现。</span></p><p><span>1876——1878年，恩格斯写出了《反杜林论》，全面阐述了马克思主义理论体系。</span></p><hr /><p><span>马克思主义的产生具有深刻的</span><strong><span>社会根源</span></strong><span>、阶级基础和思想渊源。</span></p><p><span>资本主义生产方式一方面带来了社会化大生产的迅猛发展，另一 方面又造成了深重的社会灾难。</span></p><p>&nbsp;</p><h3 id='3-马克思主义的基本特征'><span>3 马克思主义的基本特征</span></h3><p><span>马克思主义具有鲜明的</span><strong><span>科学性、人民性、实践性、发展性（老版本中还有 革命性）</span></strong><span>，这些特征体现了马克思主义的本质和使命，也展现出马克思主义的理论形象。</span></p><p><strong><span>马克思主义的基本特征，如果用一句话来概括就是科学性与革命性的统一。</span></strong></p><h3 id='4-马克思主义的当代价值'><span>4 马克思主义的当代价值</span></h3><p><span>从《共产党宣言》发表到今天，人类社会发生了翻天覆地的变化，马克思主义基本原理依然是科学真理。马克思主义在当今世界不但没有过时，而且日益焕发出旺盛的生命力。</span></p><h4 id='41-观察当代世界变化的工具'><span>4.1 观察当代世界变化的工具</span></h4><h4 id='42-指引当代中国发展的行动指南'><span>4.2 指引当代中国发展的行动指南</span></h4><p><span>不论前进的道路上遇到怎样 的困难和挑战，只要我们高举马克思主义的旗帜，高举中国特色社会主义 的旗帜，就不会迷失方向，就不会失去信仰。</span></p><h4 id='43-引领人类社会进步的科学真理'><span>4.3 引领人类社会进步的科学真理</span></h4><h3 id='5-自觉学习和运用马克思主义'><span>5 自觉学习和运用马克思主义</span></h3><p><span>学习马克思主义理论有助于青年坚定理想信念，树立科学的世界观、人生观和价值观，提高分析和解决问题的能力。大学生在学习马克思主义理论的过程中，要有正确的态度和科学的方法：</span></p><ol start='' ><li><p><span>努力学习和掌握马克思主义的基本立场观点方法。</span></p></li><li><p><span>努力学习和掌握马克思主义中国化时代化的理论成果。</span></p></li><li><p><span>坚持理论联系实际的马克思主义学风。</span></p></li><li><p><span>自觉将马克思主义内化于心、外化于行。</span></p></li></ol><h2 id='1-世界的物质性和发展规律'><span>1 世界的物质性和发展规律</span></h2><hr /><h3 id='11-世界的多样性和物质统一性'><span>1.1 世界的多样性和物质统一性</span></h3><p><span>一、物质及其存在方式</span></p><p><strong><span>从哲学上看，世界上只有两大类现象，即物质现象和精神现象；人类的活动也只有两类，即认识世界和改造世界。</span></strong></p><p><span>根据恩格斯在《路德维希·费尔巴哈和德国古典哲学的终结》中的经典表述，</span><strong><span>哲学的基本问题</span></strong><span>可概括为 </span><strong><span>&quot;思维与存在的关系问题&quot;</span></strong><span>（或意识与物质的关系问题）。这一问题具体包含两个主要方面：</span></p><ol start='' ><li><p><strong><span>第一性问题：思维与存在何者为本源</span></strong></p><ul><li><p><strong><span>唯物主义</span></strong><span>：主张物质先于意识，存在决定思维（如马克思、恩格斯、古希腊的德谟克利特）。</span></p></li><li><p><strong><span>唯心主义</span></strong><span>：认为思维或精神是世界的本源（如柏拉图的&quot;理念论&quot;、黑格尔的&quot;绝对精神&quot;）。</span></p></li><li><p><strong><span>二元论</span></strong><span>（也称不彻底的唯心主义，属于唯心主义）：试图调和两者，认为物质与意识是平行存在的独立实体（如笛卡尔）。</span></p></li></ul></li><li><p><strong><span>同一性问题：思维能否认识存在</span></strong></p><ul><li><p><strong><span>可知论</span></strong><span>：肯定世界可以被认识（如黑格尔的辩证法、科学实在论）。</span></p></li><li><p><strong><span>不可知论</span></strong><span>：否认或怀疑人类彻底认识世界的能力（如休谟、康德的&quot;物自体&quot;概念）。</span></p></li></ul></li></ol><h4 id='对物质的理解'><span>对物质的理解</span></h4><p><span>哲学中的物质，可以和“存在”等名词画上等号，但这个物质究竟是什么，却把唯物主义分成了不同的样子。可以按照发展顺序做如下整理：</span></p><ol start='' ><li><p><strong><span>古代朴素唯物主义</span></strong></p><p><span>观点：用某一种或几种具体物质形态（如水、火、气等）作为世界的本原。</span></p><p><span>进步性：在早期具有合理性和反神学的积极意义。</span></p><p><span>局限性：将哲学物质概念等同于具体物质形态，缺乏抽象性。</span></p></li><li><p><strong><span>近代形而上学唯物主义</span></strong></p><p><span>观点：以自然科学为基础，将物质等同于原子的微观结构。</span></p><p><span>进步性：依托科学发现，使物质概念更具实证性。</span></p><p><span>局限性：混淆哲学物质范畴（共性）与自然科学物质结构（个性）。无法解释社会历史的物质性，导致历史领域的唯心主义。</span></p></li><li><p><strong><span>马克思主义唯物主义</span></strong></p><p><span>定义上，</span><strong><span>物质是不依赖于人类的意识而存在，并能为人类的意识所反映的客观实在</span></strong><span>。这种客观实在性，是从</span><strong><span>自然存在和社会存在中抽象出的共同特性</span></strong><span>。（即，抽象的定义基础物质（所有物体）+历史本身）。</span></p></li></ol><p><span>马克思主义的物质范畴有如下特点：</span></p><ol start='' ><li><p><span>坚持了唯物主义一元论，同唯心主义一元论和二元论划清了界限。因为意识不过是物质的反映, 不能离开物质而独立存在，所以</span><strong><span>意识不可能成为世界的另一种本原</span></strong><span>。（</span><strong><span>物质是世界的唯一本原</span></strong><span>）</span></p></li><li><p><span>坚持了能动的反映论和可知论，批判了不可知论。</span></p><p><span>（1. </span><strong><span>意识可以反作用于物质，指导人改造物质</span></strong><span>；2. </span><strong><span>可以完全的认识物质</span></strong><span>）（是完全）</span></p></li><li><p><span>体现了唯物论和辩证法的统一，克服了形而上学唯物主义的缺陷。马克思主义的物质观认为，</span><strong><span>客观实在性是物质的唯一特性</span></strong><span>，这既肯定了哲学物质范畴同自然科学物质结构理论的联系，又把它们区别开来。</span></p><p><strong><span>从个性中看到共性，从相对中找到绝对，从暂时中发现永恒，这是马克思主义物质观体现的唯物辩证法。</span></strong></p></li><li><p><span>体现了</span><strong><span>唯物主义自然观与历史观的统一</span></strong><span>，为彻底的唯物主义奠定了理论基础。</span></p></li></ol><p><span>（*）</span></p><p><span>二、</span><span>*</span><span>物质与意识的辩证关系</span></p><p><span>三、</span><span>*</span><span>世界的物质性统一</span></p><hr /><h3 id='12-事物的普遍联系和变化发展'><span>1.2 事物的普遍联系和变化发展</span></h3><p><span>一、联系和发展的普遍性</span></p><p><span>二、对立统一规律</span></p><p><span>三、量变质变规律和否定之否定</span></p><p><span>四、联系和发展的基本环节</span></p><hr /><h3 id='13-唯物辩证法是认识和改造世界的根本方法'><span>1.3 *唯物辩证法是认识和改造世界的根本方法</span></h3><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><hr /><h1 id='马克思主义哲学'><span>马克思主义哲学</span></h1><h2 id='0-导论-2'><span>0 导论</span></h2><p><span>【见上，0 导论】</span></p><h2 id='1-物质和意识'><span>1 物质和意识</span></h2><p>&nbsp;</p><p><span>哲学的一个重要问题是世界怎么存在的，形而上学认为是静止的、孤立的，辩证法认为是联系的、发展的。</span></p><p><span>【见上，马克思主义基本原理-&gt;1 世界的物质性和发展规律】</span></p><h2 id='2-物质观'><span>2 物质观</span></h2><p>&nbsp;</p><p><span>四大考点：</span></p><ol start='' ><li><p><span>物质的存在方式</span></p></li><li><p><span>什么是意识</span></p></li><li><p><span>物质世界的二重化</span></p></li><li><p><span>物质和意识之间的辩证关系</span></p></li><li><p><span>世界物质统一性原理</span></p></li></ol><h3 id='21-物质的存在方式'><span>2.1 物质的存在方式</span></h3><p><strong><span>物质的根本属性：物质的存在方式就是运动</span></strong><span>。这也就是说，</span><strong><span>物质是运动的承担者</span></strong><span>。</span></p><p><span>物质和运动是不可分割的，运动是物质的运动, 物质是运动着的物质，离开物质的运动和离开运动的物质都是不存在的。</span></p><p><strong><span>无条件的绝对运动和有条件的相对静止构成了对立统一的关系</span></strong><span>。</span></p><p><span>时间和空间是运动着的物质的基本存在形式。</span></p><p><span>物质运动总是在一定的时间和空间中进行的，没有离开物质运动的“纯粹”时间和空间，也没有离开时间和空间的物质运动。</span></p><p><span>物质、运动、时间、空间具有内在的统一性，要求我们想问题、办事情都要以具体的时间、地点和条件为转移。</span></p><div class="md-alert md-alert-note note"><p><span class='md-alert-text md-alert-text-note'><svg viewBox="0 0 16 16" version="1.1" width="1em" height="1em" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</span><br></p><p><span>如果否认了运动是物质的运动，那么就是认为运动是意思的运动，那么就陷入了唯心主义；</span></p><p><span>如果否认了运动，那么就认为世界是静止的，那么就陷入了形而上学；</span></p><p><span>如果否定了相对静止，那么就陷入了相对主义诡辩论；</span></p><p><strong><span>相对主义诡辩论</span></strong><span>是一种哲学倾向，其核心是否认绝对真理或客观标准的存在，主张一切认知、价值或真理都是相对的，依赖于特定的视角、文化、历史背景或个人经验。这种观点若被极端化或滥用，可能演变为一种“诡辩”技巧，即通过强调相对性来模糊是非界限，甚至为荒谬的论点辩护。</span></p><ul><li><p><strong><span>辩证法</span></strong><span>承认矛盾的统一，但追求在更高层次上把握客观规律；</span></p></li><li><p><strong><span>诡辩论</span></strong><span>则利用相对性否定任何规律，陷入不可知论或虚无主义。</span></p></li></ul></div><p><span>相对静止是绝对运动的衡量尺度，而不是测量尺度。</span></p><p><span>运动与静止之间的关系是</span><strong><span>相互依赖、对立统一</span></strong><span>。</span></p><h3 id='22-意识'><span>2.2 意识</span></h3><p><span>唯物主义分为三种，前两种是</span><strong><span>古代朴素唯物主义</span></strong><span>和</span><strong><span>近代形而上学唯物主义</span></strong><span> ，都将物质局限于实体范围，是自然观，认为物质是自然界的东西；第三种是</span><strong><span>现代辩证唯物主义</span></strong><span>，加入了历史观，认为哦社会存在和历史也属于物质。如此一来，</span><strong><span>物质就分为了自然界和人类社会</span></strong><span>。</span></p><p><strong><span>意识来源于物质，也就是说来源于自然界和人类社会。</span></strong></p><p><span>意识的物质外壳是语言，可以通过劳动去发展意识。其中劳动占决定性作用，语言起到促进作用。</span></p><div class="md-alert md-alert-note note"><p><span class='md-alert-text md-alert-text-note'><svg viewBox="0 0 16 16" version="1.1" width="1em" height="1em" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</span><br></p><p><span>语言是意识外面的壳，是物质，但是它的含义不是物质，它的含义是意识。</span></p></div><h3 id='23-物质世界的二重化'><span>2.3 物质世界的二重化</span></h3><p><span>人类的出现，特别是人类改造世界的实践活动，极大地改变了世界的面貌，使世界发生了二重分化，即从自然界中分化出人类社会，从客观世界中分化出主观世界。</span></p><p><span>一方面，世界分化为自然界与人类社会。</span></p><p><span>另一方面，世界分化为客观世界和主观世界，分别对应主观和意识。客观世界是不依赖于人的思想意识而存在的现实世界，包括自然界和人类社会。主观世界是指人的意识、观念世界，是人的头脑反映和把握物质世界的精神活动的总和。从根本上说，主观世界是对客观世界的反映，并反作用于客观世界。</span></p><p><strong><span>实践是使物质世界分化成为自然界和人类社会的历史前提，又是自然界和人类社会统一起来的现实基础，自然界是人类社会的形成前提，反过来又会影响和改变自然界。人类应该进行合理的物质交换，在人类社会方面应该提高生态文明理念，在时间方面尊重自然、顺应自然和保护自然。</span></strong></p><h3 id='24-物质和意识的辩证关系'><span>2.4 物质和意识的辩证关系</span></h3><p><strong><span>意识是物质这种客观内容加上主观形式的派生产物。</span></strong><span>意识可以反映物质，但是</span><strong><span>它所反映的物质一定是客观内容</span></strong><span>。比如，鬼神的观念是一种意识，它所有反映的东西一定不是鬼神，而是床单之类的实体，是对客观世界的歪曲反映。</span></p><ol start='' ><li><p><span>物质决定意识</span></p></li><li><p><span>意识对物质有反作用</span></p></li><li><p><span>主观能动性和客观规律性的辩证统一</span></p></li><li><p><span>人工智能</span></p></li></ol><p><span>意识对物质还有能动作用，表现在四个方面：</span></p><ul><li><p><span>意识具有目的性和计划性</span></p></li><li><p><span>意识具有创造性，可以创造出世界上本没有的东西</span></p></li><li><p><span>意识可以知道实践来改造世界</span></p></li><li><p><span>意识可以调控人的活动</span></p></li></ul><p><span>以上四点也可以表述成：人的所有活动都是由有目的性的、有计划性的、有创造性的、都是在意识的知道和调控之下、都是属于是主动的创造过程。</span></p><p><strong><span>发挥这个作用的前提是，尊重客观规律</span></strong><span>。</span></p><p><strong><span>表述</span></strong><span>为：尊重客观规律是发挥主观能动性的前提，只有正确的发挥主观能动性，才能去认识和利用客观规律，实践是使他们辩证统一的基础。</span></p><div class="md-alert md-alert-caution caution"><p><span class='md-alert-text md-alert-text-caution'><svg viewBox="0 0 16 16" version="1.1" width="1em" height="1em" aria-hidden="true"><path d="M4.47.22A.749.749 0 0 1 5 0h6c.199 0 .389.079.53.22l4.25 4.25c.141.14.22.331.22.53v6a.749.749 0 0 1-.22.53l-4.25 4.25A.749.749 0 0 1 11 16H5a.749.749 0 0 1-.53-.22L.22 11.53A.749.749 0 0 1 0 11V5c0-.199.079-.389.22-.53Zm.84 1.28L1.5 5.31v5.38l3.81 3.81h5.38l3.81-3.81V5.31L10.69 1.5ZM8 4a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 8 4Zm0 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Caution</span><br></p><p><span>关于“规律”考点的关键辨析：</span></p><ol start='' ><li><p><strong><span>正确表述</span></strong><span>：发现、认识、利用、尊重客观规律。</span></p></li><li><p><strong><span>错误表述</span></strong><span>：发明、创造、消灭、改变规律（规律具有客观性，不可人为创造或消除）。</span></p></li><li><p><strong><span>特殊正确表述</span></strong><span>：改变或创造规律的作用条件（通过调整条件影响规律的表现形式，但规律本身不变）。</span></p></li></ol></div><div class="md-alert md-alert-note note"><p><span class='md-alert-text md-alert-text-note'><svg viewBox="0 0 16 16" version="1.1" width="1em" height="1em" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</span><br></p><p><strong><span>如何发挥能动作用</span></strong><span>呢，要从实际出发，以实践为途径，还要依赖一定的物质条件。书中表述为：</span></p><p><span>第一，</span><strong><span>从实际出发</span></strong><span>是正确发挥人的主观能动性的前提。只有从实际出发、充分反映客观规律的认识，才是正确的认识；只有以正确的认识为指导，才能形成 正确的行动。</span></p><p><span>第二，</span><strong><span>实践是正确发挥人的主观能动性的根本途径</span></strong><span>。正确的认识要变为现实的物质力量，只能通过物质的活动即实践才能达到。</span></p><p><span>第三，</span><strong><span>正确发挥人的主观能动性，还要依赖于一定的物质条件和物质手段</span></strong><span>。 “巧妇难为无米之炊”，没有现实的原材料，人的意识再“巧”也创造不 出任何物质的东西来</span></p></div><h3 id='25-世界物质统一性原理'><span>2.5 世界物质统一性原理</span></h3><p><span>先说结论：世界统一于物质。世界物质统一性原理是辩证唯物主义最基本最核心的观点。</span></p><p><strong><span>世界的统一性问题</span></strong><span>，是回答世界上的万事万物有没有统一性，</span><strong><span>即有没有共同的本质或本原的问题</span></strong><span>。马克思主义认为，世界的统一性在于它的物质性，世界统一于物质。</span></p><p><span>原因如下：</span></p><p><span>第一，自然界是物质的。无论是尚未进入人类实践活动范围的天然自然，还是已经被实践打上烙印的人化自然，都具有客观实在性。</span></p><p><span>第二，人类社会本质上是生产实践基础上形成的物质体系。人类社会是物质世界发展到一定阶段的产物，是物质世界的一部分，是物质存在的一种特定形态。社会中虽然也包含精神现象，但从根本上讲人类社会是一种物质性的存在，具有不以人的意志为转移的客观规律性。人类社会的自然基础是物质的，人类获取生活资料的生产活动是物质的，特别是物质资料的生产方式构成了人类社会存在和发展的基础，集中体现着人类社会的物质性。</span></p><p><span>第三，人的意识统一于物质。从意识的起源上看，意识是物质世界长期发展的产物，是物质世界中的一种特殊存在；从意识的本质上看，意识是人脑这种特殊的物质器官的机能和属性，是客观世界的主观映象；从意识的作用上看，意识能动性的发挥必须以尊重物质世界的客观规律为前提。</span></p><h2 id='3-唯物辩证法'><span>3 唯物辩证法</span></h2><p><span>马克思的唯物主义，支持的是辩证法，他认为世界是联系的、发展的。</span></p><p><strong><span>唯物辩证法的总观点和总特征就是：联系和发展</span></strong><span>。</span></p><p><span>三大规律：</span></p><ul><li><p><strong><span>对立统一规律</span></strong><span>：唯物辩证法的根本规律，是唯物辩证法的实质和核心，也可以叫做矛盾规律。它指出：对立面的统一和矛盾就是</span><strong><span>事物发展的动力</span></strong><span>，为我们提供了认识和改造世界的根本方法。</span><strong><span>描述发展的源泉和动力</span></strong></p></li><li><p><strong><span>量变质变规律（描述发展的过程和形式）</span></strong></p></li><li><p><strong><span>否定之否定规律（描述发展的方向和趋势：螺旋式上升的周期性前进）</span></strong><span>。</span></p></li></ul><p><strong><span>为什么发展</span></strong><span>？——对立统一（矛盾）。</span>
+<strong><span>怎样发展</span></strong><span>？——量变到质变。</span>
+<strong><span>发展方向</span></strong><span>？——否定之否定（螺旋上升）。</span></p><h3 id='31-联系与变化发展'><span>3.1 联系与变化、发展</span></h3><p><span>【对应课本40页，电子版48页；第一章第二节 事物的普遍联系和变化发展】</span></p><p><span>唯物辩证法认为，世界上的万事万物都处于普遍联系之中，普遍联系引起事物的变化发展。</span></p><p><strong><span>联系和发展的观点是唯物辩证法的总观点，集中体现了唯物辩证法的总特征。</span></strong></p><div class="md-alert md-alert-note note"><p><span class='md-alert-text md-alert-text-note'><svg viewBox="0 0 16 16" version="1.1" width="1em" height="1em" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</span><br></p><p><span>联系的特点——多、条、普、客：</span></p><ol start='' ><li><p><span>联系具有</span><strong><span>客观性</span></strong><span>。事物的联系是事物本身所固有的、不以人的意志为转移的。坚持联系的客观性，就是在联系的观点上坚持了唯物论。</span></p></li><li><p><span>联系具有</span><strong><span>普遍性</span></strong><span>。对应了三层含义：事物之间是普遍联系的；事物内部是联系的；整个世界构成相互联系的整体。</span></p></li><li><p><span>联系具有</span><strong><span>多样性</span></strong><span>。世界上的事物是多样的，事物之间的联系也是多样的。事物联系的主要方式有直接联系与间接联系、内部联系与外部联系、本质联系与非本质联系、必然联系与偶然联系等。不同的联系构成事物内部和事物之间的存在状态和发展趋势。</span></p></li><li><p><span>联系具有</span><strong><span>条件性</span></strong><span>。联系是矛盾着的事物的联系，联系是有条件的。条件是对事物存在和发展发生作用的诸要素的总和。对条件要唯物辩证地去看待。</span><strong><span>其一</span></strong><span>，条件对事物发展和人的活动具有支持或制约作用。有利条件支持和促进事物的发展和人的活动，不利条件制约和阻碍事物的发展和人的活动。</span><strong><span>其二</span></strong><span>，条件是可以改变的。人在条件面前并非消极无为, 经过努力，可以化不利条件为有利条件，推动事物的发展。</span><strong><span>其三</span></strong><span>，改变和创造条件不是任意的。必须尊重事物发展的客观规律，不能强行去改变事物存在和发展的条件，否则就是拔苗助长。</span></p></li></ol></div><div class="md-alert md-alert-tip tip"><p><span class='md-alert-text md-alert-text-tip'><svg viewBox="0 0 16 16" version="1.1" width="1em" height="1em" aria-hidden="true"><path d="M8 1.5c-2.363 0-4 1.69-4 3.75 0 .984.424 1.625.984 2.304l.214.253c.223.264.47.556.673.848.284.411.537.896.621 1.49a.75.75 0 0 1-1.484.211c-.04-.282-.163-.547-.37-.847a8.456 8.456 0 0 0-.542-.68c-.084-.1-.173-.205-.268-.32C3.201 7.75 2.5 6.766 2.5 5.25 2.5 2.31 4.863 0 8 0s5.5 2.31 5.5 5.25c0 1.516-.701 2.5-1.328 3.259-.095.115-.184.22-.268.319-.207.245-.383.453-.541.681-.208.3-.33.565-.37.847a.751.751 0 0 1-1.485-.212c.084-.593.337-1.078.621-1.489.203-.292.45-.584.673-.848.075-.088.147-.173.213-.253.561-.679.985-1.32.985-2.304 0-2.06-1.637-3.75-4-3.75ZM5.75 12h4.5a.75.75 0 0 1 0 1.5h-4.5a.75.75 0 0 1 0-1.5ZM6 15.25a.75.75 0 0 1 .75-.75h2.5a.75.75 0 0 1 0 1.5h-2.5a.75.75 0 0 1-.75-.75Z"></path></svg>Tip</span><br></p><p><span>喜鹊报喜乌鸦叫丧：否认了联系的客观性。是人们臆想出来的联系，而不是事物本身的联系。</span></p></div><p><span>世界上的各种事物</span><strong><span>不仅是普遍联系的，而且是变化发展的</span></strong><span>，事物的相互联系构成了运动、变化和发展。</span></p><p><span>物质世界处于永恒的运动之中，而物质世界的运动中内在地包含着事物的变化和发展，其中变化泛指事物发生的一切改变，发展则是事物变化中前进的、上升的运动。</span></p><p><span>因此我们要用</span><strong><span>整体性开放性的观念去动态地考察事物</span></strong><span>，因为联系会根据条件不一样而改变，所以要动态考察。</span></p><p>&nbsp;</p><p><span>物质世界的</span><strong><span>发展</span></strong><span>，特别是人类社会的发展，其实质是</span><strong><span>新事物的产生和旧事物的灭亡</span></strong><span>。（一种新的、富有生命力的现实的东西就会代替正在衰亡的现实的东西— 如果旧的东西足够理智，</span><strong><span>不加抵抗即行死亡，那就和平地代替；如果旧的东西抗拒这种必然性，那就通过暴力来代替</span></strong><span>。）</span></p><p><span>判断一个事物是新事物还是旧事物，并不取决于其形式的新旧与出现时间的先后。</span></p><p><strong><span>新事物是指合乎历史前进方向、具有远大前途的东西，旧事物是指丧失历史必然性、日趋灭亡的东西。</span></strong><span>正是这种新事物产生、旧事物灭亡的新陈代谢运动，才使世界蓬勃发展。</span></p><div class="md-alert md-alert-note note"><p><span class='md-alert-text md-alert-text-note'><svg viewBox="0 0 16 16" version="1.1" width="1em" height="1em" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</span><br></p><p><span>新事物必然战胜旧事物的原因：</span></p><ol start='' ><li><p><strong><span>新事物适应环境变化</span></strong></p><ul><li><p><strong><span>新事物</span></strong><span>：具有新的要素、结构和功能，能够适应变化后的环境和条件。</span></p></li><li><p><strong><span>旧事物</span></strong><span>：其要素和功能已不适应新环境，必然走向灭亡。</span></p></li></ul></li><li><p><strong><span>新事物是对旧事物的辩证扬弃</span></strong></p><ul><li><p><span>新事物在旧事物的“母体”中孕育，既：</span></p><ul><li><p><strong><span>否定</span></strong><span>旧事物中消极腐朽的内容；</span></p></li><li><p><strong><span>保留</span></strong><span>旧事物中合理的、适应新条件的因素；</span></p></li><li><p><strong><span>增添</span></strong><span>旧事物无法容纳的新内容。</span></p></li></ul></li><li><p><span>这使得新事物在本质上更优越，具有强大生命力。</span></p></li></ul></li><li><p><strong><span>社会历史领域：新事物符合人民利益</span></strong></p><ul><li><p><span>新事物是先进社会力量的创造性产物，符合人民群众的根本利益和要求，因而必然得到拥护并战胜旧事物。</span></p></li><li><p><span>在社会剧烈变革时期（如科技革命、社会转型），这一规律表现尤为显著。</span></p></li></ul></li></ol></div><h3 id='32-对立统一规律'><span>3.2 对立统一规律</span></h3><p><span>也叫做</span><strong><span>矛盾规律</span></strong><span>。矛盾的基本属性是斗争性和同一性。其中对立就对应斗争性，统一对应同一性。</span></p><div class="md-alert md-alert-note note"><p><span class='md-alert-text md-alert-text-note'><svg viewBox="0 0 16 16" version="1.1" width="1em" height="1em" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</span><br></p><ol start='' ><li><p><strong><span>斗争性</span></strong><span>：指矛盾双方相互排斥、相互分离的趋势。它是</span><strong><span>无条件的、绝对的</span></strong><span>。例如，“世界上肯定没有两个完全一样的人”，说明人与人之间必然存在差异和排斥，这种对立是普遍存在的。</span><strong><span>矛盾着的对立面相互贯通，在一定条件下可以相互转化。</span></strong></p></li><li><p><strong><span>同一性</span></strong><span>：指矛盾双方相互依存、相互贯通的性质。它是</span><strong><span>有条件的、相对的</span></strong><span>。</span></p></li></ol><p><strong><span>关系</span></strong><span>：</span></p><ul><li><p><span>斗争性强调对立，同一性强调统一，二者不可分割。</span></p></li><li><p><span>斗争性寓于同一性之中，没有斗争性就没有同一性；反之，没有同一性，斗争性也无从体现。</span></p></li></ul><p><strong><span>总结</span></strong><span>：矛盾双方既斗争又统一，推动事物发展。例如，人际关系中既有冲突（斗争性），也有合作（同一性），二者共同维持关系的动态平衡。</span></p></div><div class="md-alert md-alert-note note"><p><span class='md-alert-text md-alert-text-note'><svg viewBox="0 0 16 16" version="1.1" width="1em" height="1em" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</span><br></p><p><span>矛盾的同一性和斗争性在事物发展中的</span><strong><span>作用及其辩证关系</span></strong></p><ol start='' ><li><p><span>矛盾的同一性在事物发展中的作用</span></p><ul><li><p><span>同一性是事物存在和发展的</span><strong><span>前提</span></strong><span>：矛盾双方相互依存，一方的发展以另一方为条件，发展是在矛盾统一体中实现的。只有双方一起才能发展。</span></p></li><li><p><span>同一性</span><strong><span>促进矛盾双方相互吸取有利因素</span></strong><span>：双方在相互作用中各自得到发展。</span></p></li><li><p><span>同一性</span><strong><span>规定事物转化</span></strong><span>的趋势：事物的发展方向是向自己的对立面转化，这种转化基于矛盾双方的相互贯通关系。</span></p></li></ul></li><li><p><span>矛盾的斗争性在事物发展中的</span><strong><span>作用</span></strong>
+<span>斗争性推动矛盾双方力量变化：造成双方力量的不平衡，造成量变，为质变创造条件。简单地说，斗争性的作用就是产生量变，为质变创造条件。（</span><strong><span>毛斗用质量</span></strong><span>）</span></p></li></ol><p><span>斗争性是矛盾统一体过渡的决定力量：促使旧统一体破裂，新统一体产生。</span></p><ol start='3' ><li><p><span>同一性和斗争性的辩证关系</span>
+<strong><span>二者相互结合，共同推动事物发展，但在不同条件下，主导地位可能变化。</span></strong></p></li></ol><p><strong><span>方法论要求</span></strong><span>：</span></p><ul><li><p><span>既要看到斗争性，又要把握同一性，在对立中把握统一，在统一中把握对立；在斗争中把握同一，在同一中把握斗争。</span></p></li><li><p><span>正确认识“和谐”的作用——和谐是矛盾的特殊表现形式，体现矛盾双方的协调、合作，但并非绝对同一，而是动态平衡的结果。</span></p></li></ul><p><span>实践指导意义</span>
+<span>构建和谐社会：要在发展中正确处理社会矛盾，使矛盾双方在协调中共同发展。人与自然和谐共生：通过解决矛盾（如发展与环保的冲突）实现可持续发展。</span></p><p><span>总结：矛盾的同一性和斗争性共同推动事物发展，正确把握二者的辩证关系，才能科学指导实践，促进社会和谐与进步。</span></p></div><h4 id='解决矛盾的方式'><span>解决矛盾的方式</span></h4><ol start='' ><li><p><span>双方融合形成新事物，协同运动</span></p></li><li><p><span>一方克服另一方</span></p></li><li><p><span>同归于尽</span></p></li></ol><h4 id='矛盾的普遍性和特殊性'><span>矛盾的普遍性和特殊性</span></h4><ul><li><p><strong><span>矛盾的普遍性</span></strong><span>是指矛盾存在于一切事物中，存在于一切事物发展过程的始终，</span><strong><span>旧的矛盾解决了</span></strong><span>，</span><strong><span>又产生新的矛盾</span></strong><span>，事物始终在矛盾中运动。可以表述为：矛盾无处不有，矛盾无时不有。</span></p></li><li><p><strong><span>矛盾的特殊性</span></strong><span>是指各个具体事物的矛盾、每一个矛盾的各个方面在发展的不同阶段上各有其特点。矛盾的特殊性决定了事物的不同性质。只有具体分析矛盾的特殊性，才能认清事物的本质和发展规律，并采取正确的方法和措施去解决矛盾，推动事物的发展。</span></p></li></ul><p><span>同一事物不同阶段会有不同的矛盾，我们需要对症下药，</span><strong><span>具体问题具体分析</span></strong><span>。</span></p><h4 id='矛盾的力量不平衡性'><span>矛盾的力量不平衡性</span></h4><p><span>矛盾具有力量不平衡性，原因在于</span><strong><span>地位、性质和作用不同</span></strong><span>。</span></p><h4 id='矛盾的基本构成'><span>矛盾的基本构成</span></h4><ul><li><p><strong><span>主要矛盾</span></strong><span>：在矛盾体系中处于支配地位，对事物发展起决定性作用。</span></p></li><li><p><strong><span>次要矛盾</span></strong><span>：处于从属地位，对事物发展起次要作用。</span></p></li><li><p><strong><span>矛盾的主要方面</span></strong><span>：在每一对矛盾中占支配地位、起主导作用的一方，决定事物的性质。</span></p></li><li><p><strong><span>矛盾的次要方面</span></strong><span>：处于被支配地位、不起主导作用的一方。</span></p></li></ul><h4 id='矛盾分析法'><span>矛盾分析法</span></h4><ol start='' ><li><p><span>两点论：全面分析矛盾双方的对立与统一；既要看到主要矛盾和矛盾的主要方面，也要看到次要矛盾和矛盾的次要方面</span></p></li><li><p><span>重点论：着重把握主要矛盾和矛盾的主要方面，以此作为解决问题的关键。</span></p></li></ol><p><strong><span>两点论和重点论的统一要求我们，看问题既要全面地看，又要看主流、大势、发展趋势。</span></strong></p><p>&nbsp;</p><p><strong><span>矛盾的普遍性是矛盾的共性，矛盾的特殊性即矛盾的个性。</span></strong></p><p><span>矛盾的共性是无条件的、绝对的，矛盾的个性是有条件的、相对的。</span></p><hr /><p><strong><span>对立统一规律揭示了事物变化发展的内在动力，那么量变质变规律和否定之否定规律揭示了事物变化发展的状态、过程和趋势，表明了事物的变化发展是一个渐进性与飞跃性、前进性与曲折性相统一的过程。</span></strong></p><p>&nbsp;</p><p><span>之前提到唯物辩证法有两个总观点和总特征：联系和发展。</span></p><p><span>对立统一规律对应的是联系，万事万物之间的联系就是既有斗争性，又有同一性，而这两点又是矛盾的基本属性。</span></p><p><span>而另一个总观点总特征，就是发展，对应了量变质变规律（描述发展的过程和形式）和否定之否定规律（描述发展的方向和趋势）。</span></p><hr /><h3 id='33-量变质变规律'><span>3.3 量变质变规律</span></h3><p><span>事物包括</span><strong><span>质</span></strong><span>、</span><strong><span>量</span></strong><span>、</span><strong><span>度</span></strong><span>三方面的规定性。</span></p><ul><li><p><span>质是一事物区别于其他事物的内在规定性。</span></p></li><li><p><span>量是事物的</span><strong><span>规模、程度、速度</span></strong><span>（“龟速程”）等可以用数量关系表示的规定性。</span></p></li></ul><p><span>事物的量和质是统一的，量和质的统一在度中得到体现。</span></p><ul><li><p><span>度是保持事物质的稳定性的数量界限，即事物的限度、幅度和范围，度的两端叫关节点或临界点，</span><strong><span>超出度的范围，此物就转化为他物</span></strong><span>。</span></p></li></ul><p><span>度这一哲学范畴启示我们，在认识和处理问题时要掌握适度原则。</span></p><p>&nbsp;</p><p><span>量变是事物数量的增减和组成要素排列次序的变动，是保持事物的质的相对稳定性的不显著变化。</span>
+<span>量变</span><strong><span>体现了事物发展渐进过程的连续性</span></strong><span>。</span></p><p><span>质变是事物性质的根本变化，是事物由一种质态向另一种质态的飞跃。</span>
+<span>质变</span><strong><span>体现了事物发展渐进过程和连续性的中断</span></strong><span>。</span></p><p>&nbsp;</p><p><span>量变和质变的辩证关系是：</span></p><ol start='' ><li><p><span>量变是质变的必要准备。任何事物的变化都有一个量变的积累过程，没有量变的积累，质变就不会发生。</span></p></li><li><p><span>质变是量变的必然结果，并为新的量变开辟道路。单纯的量变不会永远持续下去，量变达到一定程度必然引起质变。</span></p></li><li><p><span>量变和质变是相互渗透的。一方面，</span><strong><span>在总的量变过程中有阶段性和局部性的部分质变</span></strong><span>；另一方面，</span><strong><span>在质变过程中也有旧质在量上的收缩和新质在量上的扩张</span></strong><span>。</span></p></li></ol><p><span>量变和质变是相互依存、相互贯通的，量变引起质变，在新质的基础上，事物又开始新的量变，如此交替循环，构成了事物的发展过程。</span><strong><span>量变质变规律体现了事物发展的渐进性和飞跃性的统一。</span></strong></p><p>&nbsp;</p><p><span>量变质变规律具有重要的方法论意义。</span></p><p><strong><span>一方面，当事物的发展处在量变阶段时，要踏踏实实做好日常工作，为未来重大改变作准备；另一方面，当质变来临的时候，要果断地、不失时机地抓住机遇，促成质变，使工作迈上新台阶。</span></strong></p><h3 id='34-否定之否定规律'><span>3.4 否定之否定规律</span></h3><p><span>事物的发展是通过其</span><strong><span>内在矛盾运动</span></strong><span>以自我否定的方式而实现的。</span><strong><span>任何事物内部都包含肯定的方面与否定的方面</span></strong><span>，由于矛盾双方的相互作用，当否定的方面上升至支配地位时，事物就会由肯定走向对自身的否定，再由否定进一步走向更高阶段的肯定，即否定之否定。</span></p><p><strong><span>否定之否定规揭示事物自己发展自己的完整过程及本质。</span></strong></p><p><strong><span>事物内部都存在肯定因素和否定因素。肯定因素是维持现存事物存在的因素，否定因素是促使现存事物灭亡的因素。</span></strong></p><p><span>唯物辩证法的否定观科学揭示了否定的深刻内涵：</span></p><ol start='' ><li><p><strong><span>否定是事物的自我否定</span></strong><span>、</span><strong><span>自我发展是事物内部矛盾运动的结果</span></strong><span>。</span></p></li><li><p><span>否定是事物发展的环节，是旧事物向新事物的转变，是从旧质到新质的飞跃。</span><strong><span>只有经过否定，旧事物才能向新事物转变</span></strong><span>。</span></p></li><li><p><span>否定是新旧事物联系的环节，新事物孕育产生于旧事物，</span><strong><span>新旧事物是通过否定环节联系起来的</span></strong><span>。</span></p></li><li><p><span>辩证否定的实质是“</span><strong><span>扬弃</span></strong><span>”，</span><strong><span>即新事物对旧事物既批判又继承，既克服其消极因素又保留其积极因素</span></strong><span>。</span></p></li></ol><p><span>辩证否定观对于人们的认识和实践活动具有重要的指导意义，它要求我们对待一切事物都要采取科学分析的态度，</span><strong><span>既要把握住它的现存状态又要把握住它的发展趋势，反对简单地肯定一切或否定一切</span></strong><span>。例如，对于中华优秀传统文化，我们既要注重传承，又要根据时代要求实现创造性转化和创新性发展。对于其他民族的文化成果，我们既不照搬，也不应一概排斥，而要批判地吸收其合理的因素，为我所用。</span></p><p><strong><span>事物的辩证否定不是一次完成的，而是经历事物自我发展的两次否定、三个阶段</span></strong><span>，即“肯定—否定—否定之否定”的有规律的过程。第一次否定使矛盾得到初步解决，而处于否定阶段的事物仍然具有片面性，还要经过再次否定，即否定之否定，实现对立面的统一，使矛盾得到根本解决。</span><strong><span>其中，否定之否定阶段仿佛是向原来出发点的“回复”，但这是在更高阶段的“回复”。</span></strong></p><p><strong><span>事物的发展呈现出周期性，不同周期的交替使事物的发展呈现出波浪式前进或螺旋式上升的总趋势。</span></strong></p><p><strong><span>否定之否定规律揭示了事物发展的前进性与曲折性的统一</span></strong><span>。</span></p><p><strong><span>前进性</span></strong><span>体现在每一次否定都是质变，都把事物推进到新阶段；每一个周期都是开放的，前一个周期的终点是下一个周期的起点，不存在不被否定的终点。</span></p><p><strong><span>曲折性</span></strong><span>体现在回复性上，其中有暂时的停顿甚至倒退。</span></p><p><span>这表明，事物的发展不是直线式前进，而是</span><strong><span>螺旋式上升</span></strong><span>的。</span></p><p><span>前进性是社会历史发展的总趋势，人类永远不会停止自己前进的步伐，然而这一总趋势的实现却不是一帆风顺的，而是充满着坎坷与曲折。</span></p><h3 id='35-联系与发展的五个环节'><span>3.5 联系与发展的五个环节</span></h3><h4 id='内容与形式'><span>内容与形式</span></h4><p><strong><span>内容决定形式，形式反过来对内容有一个反作用，它们互相作用。</span></strong></p><p><strong><span>适合内容的形式，反过来就可以对内容积极推动；不适合内容的形式，反过来就消极阻碍作用。</span></strong></p><p><span>其中</span><strong><span>内容较为易变，形式较为稳定</span></strong><span>，比如诗歌七言五言的形式比较稳定啊，内容就很多了，内容是事物存在的基础，如果脱离的内容，那形式也就没价值了。</span></p><h4 id='原因和结果'><span>原因和结果</span></h4><p><strong><span>原因引起结果，结果反过来影响原因。</span></strong></p><p><span>注意因果联系是</span><strong><span>有时间顺序</span></strong><span>的，在一个具体的因果联系中，</span><strong><span>原因与结果不可颠倒</span></strong><span>，总是原因在前，结果在后。</span></p><h4 id='必然和偶然'><span>必然和偶然</span></h4><ul><li><p><span>必然是一种确定不移的趋势，一种普遍的趋势，而偶然是一种不确定的趋势，它是一种个别的表现。</span></p></li><li><p><span>必然的形成原因是内部的根本矛盾。</span></p></li><li><p><span>而偶然的形成原因，就不是根本矛盾，而是因为外部条件。</span></p></li><li><p><span>必然会占支配地位，决定事物的发展方向，而偶然是占从属地位，会有促进或者延缓的作用。</span></p></li><li><p><span>必然存在于偶然当中，他会通过大量的偶然表现出来，为他开辟道路。</span></p></li></ul><h4 id='本质决定现象'><span>本质决定现象</span></h4><p><strong><span>本质决定现象，现象反过来表现着本质。</span></strong></p><p><strong><span>本质就是事物内在的联系，而现象是事物本质的外在表现。</span></strong></p><p><span>特别注意</span><strong><span>现象分为了真象和假象，他们俩其实都表现了本质，都跟事物本质是同一的。</span></strong><span>只不过一个是正面的表现，一个是反面歪曲的表现。比如一根筷子它是直的，你把它放在空气里面，我们就觉得它是直的，这就是真象，当你把这根筷子插入到一个水中，那它好像变弯了这就是假象，它</span><strong><span>歪曲地表现了本质</span></strong><span>。</span></p><p><span>注意区分假象和错觉，</span><strong><span>真象假象都是客观的现象</span></strong><span>，比如“筷子放进水里会弯”，而</span><strong><span>错觉是一种主观的</span></strong><span>，我以为，我以为你喜欢我呢，这是错觉。</span></p><h4 id='现实与可能'><span>现实与可能</span></h4><p><span>现实呢会不断产出新的可能，而反过来，可能包含着发展成现实的因素，他们俩会相互转化。</span></p><p><span>可能的分类：</span></p><ul><li><p><span>根据现实依据区分：可能与不可能（如活一万年不可能，违背必然性）。</span></p></li><li><p><span>根据这个条件是否充分：现实可能（考研上岸）与抽象可能（大海捞针）。</span></p></li><li><p><span>根据是否对人有利：好的可能与坏的可能（基于对人是否有利）。</span></p></li></ul><h3 id='36-客观辩证法和主观辩证法'><span>3.6 客观辩证法和主观辩证法</span></h3><ul><li><p><span>客观辩证法就是物质辩证法，反映物质运动的规律；主观辩证法是意识辩证法，反映思维活动的规律（以概念为细胞）。</span></p></li><li><p><span>主观辩证法反映客观辩证法，二者本质统一，表现形式不同。（因为思维会反映物质）</span></p></li><li><p><span>其实两者本质都是统一的，都是反映了物质的东西，只是他们表现形式不一样。</span></p></li></ul><h2 id='4-实践观'><span>4 实践观</span></h2><p>&nbsp;</p><p><strong><span>实践性是马克思主义理论区别于其他理论的根本特征。</span></strong></p><p><strong><span>实践的观点是马克思主义的基本观点。</span></strong></p><p><span>人与世界的关系主要包括两个方面：一是认识世界，二是改造世界。</span></p><div class="md-alert md-alert-note note"><p><span class='md-alert-text md-alert-text-note'><svg viewBox="0 0 16 16" version="1.1" width="1em" height="1em" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</span><br></p><p><span>马克思主义的实践观、认识论和价值论主要解决下面的问题：</span></p><ol start='' ><li><p><span>人为什么要认识和改造世界？</span></p></li><li><p><span>能否认识和改造世界？</span></p></li><li><p><span>怎样认识和改造世界？</span></p></li></ol></div><hr /><h3 id='第二章-实践与认识及其发展规律'><span>第二章 实践与认识及其发展规律</span></h3><p><span>【从第70页科学实践观开始，到第74页 实践的本质 之前，考试一般不会涉及】</span></p><p><span>【我暂时也没有理清这一部分的逻辑，不得其要领】</span></p><p><span>【日后可以做更详细的调查和研究】</span></p><h4 id='一实践与认识'><span>一、实践与认识</span></h4><p><strong><span>实践是人类能动地改造世界的社会性的物质活动</span></strong><span>，具有</span><strong><span>客观实在性</span></strong><span>、</span><strong><span>自觉能动性</span></strong><span>和</span><strong><span>社会历史性</span></strong><span>三个基本特征。</span></p><p><span>实践的形式可分为以下三种基本类型：一是物质生产实践，二是社会政治实践，三是科学文化实践。其中物质生产实践是最基本的实践活动，构成全部社会生活的基础，社会政治实践和科学文化实践在物质生产实践基础上产生和发展，受物质生产实践的制约并对其产生能动作用。</span></p><p><span>实践对认识的决定作用表现在以下四个方面：第一，实践是认识的来源。第二，实践是认识发展的动力。第三，实践是认识的目的。第四，实践是检验真理的唯一标准。</span></p><p><strong><span>感性认识和理性认识</span></strong><span>两者辩证统一：第一，理性认识依赖于感性认识。第二，感性认识有待于发展和深化为理性认识。第三，感性认识和理性认识相互渗透、互相包含。</span></p><p><span>实践与认识的辨证运动，是一个有感性认识到理性认识，又由理性认识到实践的飞跃，是实践、认识、再实践、再认识，</span><strong><span>循环往复以至无穷的辨证发展过程</span></strong><span>。</span></p><p><span>从实践到认识，再从认识到实践，实现了人们认识具体事物的辩证运动过程。</span></p><h4 id='二真理与价值'><span>二、真理与价值</span></h4><p><span>第一，真理的绝对性。真理的绝对性是指真理主客观统一的确定性和发展的无限性。它有两个方面的含义：一是指任何真理都标志着主观与客观相符合，都包含着不依赖于人和人的意识的客观内容，都同谬误有原则的界限。二是人类认识按其本性来说，都能正确认识无限发展着的物质世界，认识每前进一步，都是对无限发展着的物质世界的接近，这一点也是绝对的、无条件的。</span></p><p><span>第二，真理的相对性。真理的相对性是指人们在一定条件下对客观事物及其本质和发展规律的正确认识总是有限度的、不完善的。它具有两个方面的含义：一是从客观世界的整体来看，任何真理都只是对客观世界的某一阶段、某一部分的正确认识，人类到达的认识的广度总是有限的。二是就特定事物而言，任何真理都只是对客观对象一定方面、一定层次和一定程度的正确认识，认识反映事物的深度是有限度的。</span></p><p><span>第三，真理的绝对性和相对性的辩证统一。从真理的两重性来看，真理的绝对性与相对性相互依存，任何真理都是既是绝对，又是相对的。从真理的发展来看，任何真理的认识都是由真理的相对性向绝对性转化过程的一个环节。</span></p><p><strong><span>实践之所以能够成为检验真理的唯一标准，是由真理的本性和实践的特点决定的：</span></strong></p><ul><li><p><span>第一，从真理的本性来看，真理是人们对客观事物及其发展规律的</span><strong><span>正确反映</span></strong><span>，它的本性在于主观和客观相符合。</span></p></li><li><p><span>第二，从实践的特点看，实践具有</span><strong><span>直接现实性</span></strong><span>。实践的直接现实性是它客观实在性的具体表现。</span></p></li></ul><p><span>实践标准的确定性即决定性，是指实践作为检验真理标准的唯一性、归根到底性、最终性，离开实践在没有其他公正合理的标准。</span></p><p><span>实践标准的不确定性即相对性，是指实践作为检验真理标准的条件性。一方面，任何实践都会受到主客观的制约，另一方面，实践是社会的、历史的实践，存在历史条件的限制。</span></p><p><span>实践是检验真理的唯一标准，但实践对真理的检验不可能一次完成，实践检验真理是一个永无止境的发展过程。</span></p><hr /><p><span>如果一个活动超出了纯粹的意识活动，那么这个活动就是实践活动。</span></p><p><span>实践中还要区分主体和客体，客体并不是指客观事物，只有纳入了实践活动范围内的客观事物，才是客体。</span></p><p><span>实践主体和实践客体之间必须依靠中介系统才能相互作用，这个中介既可以是物质，也可以是语言这种抽象物质。</span></p><h2 id='5-唯物史观'><span>5 唯物史观</span></h2><h3 id='第三章-人类社会的存在与发展'><span>第三章 人类社会的存在与发展</span></h3><p><span>一、人类社会的存在与发展</span></p><p><span>社会存在主要包括自然地理环境、人口因素和物质生产方式。</span></p><p><span>社会存在决定社会意识，社会意识是社会存在的反映，并反作用与社会存在。社会存在是社会意识内容的客观来源，社会意识是社会物质生活过程及其条件的主观反映。社会意识是人们进行社会物质交往的产物。</span></p><p><span>社会意识的相对独立性是指，社会意识在从根本上受到了社会存在决定的同时，还具有自身特有的发展形式和发展规律。</span></p><p><span>一是社会意识与社会存在发展具有不完全同步性和不平衡性。二是社会意识内部各种形式之间存在相互影响且各自具有历史继承性。三是社会意识对社会存在具有能动的反作用，这是社会意识相对独立性的突出表现。</span></p><p><span>生产力是人类在生产实践中形成的改革和影响自然以使其适应社会需要的物质力量。</span></p><p><span>生产关系是人们在物质生产过程中形成的不以人的意志为转移的经济关系。</span></p><p><span>生产力的基本要素包括：一是劳动资料，也称劳动手段。它是人们在劳动过程中所运用的物质资料或物质条件，其中最重要的是生产工具。二是劳动对象。一切自然物质都是可能的劳动对象，劳动对象是现实生产的必要前提。三是劳动者。劳动者是生产力中最活跃的因素。</span></p><p><span>科学技术是生产力中的重要因素。</span></p><p><span>在整个上层建筑中，政治上层建筑居于主导地位，国家政权是政治上层建筑的核心。国家不是从来就有的，而是社会发展到一定历史阶段的产物。</span></p><p><span>经济基础与上层建筑是辩证统一的。经济基础决定上层建筑，上层建筑反作用于经济基础，二者相互影响、相互作用。首先，经济基础决定上层建筑。其次，上层建筑对经济基础具有反作用。再次，经济基础与上层建筑的相互作用构成二者的矛盾运动。最后经济基础和上层建筑之间的内在联系构成了上层建筑一定要适合经济基础状况的规律。</span></p><p><span> </span></p><p><span>二、社会历史发展的动力</span></p><p><span>社会基本矛盾是历史发展的根本动力。首先，生产力是社会基本矛盾运动中最基本的动力因素，是人类发展和进步的最终决定力量。其次社会矛盾特别是生产力和生产关系的矛盾，决定着社会中其他矛盾的存在和发展。最后，社会基本矛盾具有不同的表现形式和解决方式，并从根本上影响和促进社会形态的变化和发展。。</span></p><p><span>阶级斗争是阶级社会发展的直接动力。阶级斗争是阶级利益根本冲突的对抗阶级之间的对立和斗争。阶级斗争是阶级社会客观存在的必然现象，并贯穿于阶级社会的全部发展过程。阶级斗争对阶级社会发展的推动作用突出地表现在社会形态的更替中。阶级斗争的作用还表现在同一社会形态的量变过程中。阶级斗争及其作用受到了一定社会历史条件的制约。</span></p><p><span>文化在社会发展中的作用。第一，文化为社会发展提供思想指引。第二，文化为社会发展提供精神动力。第三，文化为社会发展提供凝聚力量。</span></p><p><span>三、人民群众在历史发展中的作用</span></p><p><span>从质上看，人民群众是指一切对社会历史发展起推动作用的人；从量上看，人民群众是指社会人口中的绝大多数。</span></p><p><span>人民群众是社会物质财富的创造者。人们群众是社会精神财富的创造者。人民群众创造历史的活动受到一定社会历史条件的制约。</span></p><p><span>杰出人物的历史作用：不管什么样的历史人物，在历史上发挥什么样的作用，都要受到社会发展客观规律的制约，而不能决定和改变历史发展的总进程和总方向。</span></p><h1 id='6-政治经济学'><span>6 政治经济学</span></h1><h3 id='第四章-资本主义的本质及规律'><span>第四章 资本主义的本质及规律</span></h3><p><span>一、商品经济的价值规律</span></p><p><span>商品具有使用价值和价值两个因素或两种属性。使用价值是商品的自然属性。决定商品交换的比例不是商品的使用价值，而是价值。价值是凝结在商品中的无差别的一般人类劳动，价值是商品所特有的社会属性。</span></p><p><span>任何一种生产商品的劳动，一方面是特殊的具体劳动，另一方面又是一般的抽象劳动，这就是劳动的二重性。</span></p><p><span>具体劳动和抽象劳动也是对立统一的。一方面，具体劳动和抽象劳动不是各自独立存在的两种劳动或两次劳动，它们在时间上和空间上是统一的。另一方面，具体劳动与抽象劳动又分别反映劳动的不同属性，具体劳动反映自然属性，抽象劳动反映社会属性。</span></p><p><span>决定商品价值量的不是生产商品的个别劳动时间，而是社会必要劳动时间。</span></p><p><span>价值规律的表现形式是，商品的价格围绕商品的价值自发波动。由于供应关系变动的影响，商品价格总是时而高于价值，时而低于价值，不可避免地围绕价值这个中心上下波动。</span></p><p><span>价值规律在市场配置资源过程中的作用表现在：第一，自发地调节生产资料和劳动力在社会各生产部门之间的分配比例。第二，自发地刺激社会生产力的发展。第三，自发地调节社会收入的分配。</span></p><p><span> </span></p><p><span>二、资本主义经济制度</span></p><p><span>剩余价值是在资本主义生产过程中生产出来的。资本主义生产过程具有二重性，一方面是生产物质资料的劳动过程；另一方面是生产剩余价值的过程，即价值增殖过程。</span></p><p><span>价值增殖过程是剩余价值的生产过程，这是资本主义生产过程的主要方面。剩余价值既不是由全部资本创造的，也不是由不变资本创造的，而是由可变资本雇佣的劳动者创造的。</span></p><p><span>绝对剩余价值是指在必要劳动时间不变的条件下，由于延长工作日的长度或提高劳动强度而生产的剩余价值。相对剩余价值是指在工作日长度不变的条件下，通过缩短必要劳动时间而相对延长剩余劳动时间所生产的剩余价值。</span></p><p><span>“无人工厂”本质上依然是物化劳动或不变资本的实物形式，它们在参与产品的生产时，只是把原有的价值转移到产品中去，而不是创造新价值，更不能创造剩余价值。“总体工人”中脑力劳动者的比重不断增大。劳动的复杂程度和强度日益提高，生产力日益提升，从而创造出更多的价值和剩余价值。资本主义条件下的生产自动化是资本家获取高额剩余价值的手段，而雇佣工人的剩余价值仍然是这种剩余价值的唯一源泉。</span></p><p><span>    剩余价值的资本化，就是资本积累。资本积累的本质，就是资本家不断地利用无偿占有的工人创造的剩余价值来扩大自己的资本规模，从而进一步扩大和加强对工人的剥削和统治。</span></p><p><span>在资本主义制度下，工人的工资是劳动里的价值或价格，这就是资本主义工资的本质。</span></p><p><span>    剩余价值率是剩余价值与可变资本的比率，反映的是资本家对工人的剥削程度。利润率则是剩余价值与全部预付资本的比率，反映的是预付总资本的增值程度，掩盖了资本家对工人的剥削。</span></p><p><span>    生产社会化和生产资料资本主义私人占有之间的矛盾，是资本主义的基本矛盾。</span></p><p><span>    生产过剩是资本主义经济危机的本质特征，但是这种过剩是相对过剩，即相对于劳动人民有支付能力的需求来说，社会生产的商品显得过剩，而不是与劳动人民的实际需要相比的绝对过剩。</span></p><p><span>    资本主义经济危机爆发的根本原因是资本主义的基本矛盾，其一，生产无限扩大的趋势与劳动人民有支付能力的需求相对缩小的矛盾。其二，单个企业内部生产的有组织性和整个社会生产的无政府状态之间的矛盾。</span></p><p><span> </span></p><p><span>三、资本主义上层建筑</span></p><p><span>资本主义意识形态的本质：第一，资本主义意识形态是资本主义社会的观念上层建筑，是为资本主义的经济基础服务的，因而是为资本主义国家的政治上层建筑服务的。第二，资本主义意识形态是资产阶级的阶级意识的集中体现。</span></p><p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p><hr /><h1 id='信息'><span>信息</span></h1><p><span>【教材版本：《马克思主义基本原理》2023版 马克思主义理论研究和建设工程重点教材 高等教育出版社 Z-library】</span></p><p><span>【参考资料：空卡空卡空空卡（B站）的视频】</span></p><p><span>【还参考了：学校中一位有责任心的老师重点勾画（可惜的是他并不是我的马原老师，我的马原老师水平级差）】</span></p><p><span>【编写时未参考：北京大学马克思主义学会的任何作品】</span></p><p><span>【我们联合 方舟启航】</span></p><p><span>【END】</span></p></div></div>
+</body>
+</html>
