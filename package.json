@@ -1,0 +1,10 @@
+{
+  "version": "0.1.1",
+  "license": "WTFPL",
+  "private": true,
+  "dependencies": {
+    "@marp-team/marp-cli": "^4.0.2",
+    "@marp-team/marp-core": "^4.0.0",
+    "markdown-it-container": "^4.0.0"
+  }
+}

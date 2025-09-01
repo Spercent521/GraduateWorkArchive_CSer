@@ -1,0 +1,25 @@
+test
+
+# *.html
+*.pdf
+node_modules/
+
+# *.png
+*.mp4
+课件
+*backup*
+
+汇报
+*研究生*
+*讲座*
+
+*game*
+
+*lock*
+*__temp__*
+libs
+求职
+*.vsix
+
+*教案*
+*math*
