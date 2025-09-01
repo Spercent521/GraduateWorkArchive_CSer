@@ -1,0 +1,57 @@
+# GraduateWorkArchive_CSer 🎓
+
+## 📚 大学计算机相关课程作业存档
+
+本仓库归档了我大学期间的部分课程作业、实验报告和项目代码。✨
+
+由于 GitHub 对仓库大小和文件上传有限制，尽管部分大文件已通过 Git LFS 管理，但对于特别大的文件或者意义不大的文件，我选择不上传至仓库。📦
+
+内容可能存在不完善之处，仅为你完成课程任务提供参考。🙏
+
+---
+
+## 🗂️ 项目结构
+
+- 每个分支代表一个课程的相关资料 🌿
+- 主分支（main）仅包含此 README 文件，不包含任何项目内容
+
+---
+
+## 🛠️ 如何增加新的内容
+
+当需要添加新项目时，请按照以下步骤操作：
+
+```bash
+# 1. 克隆仓库（如果还没克隆）
+git clone https://github.com/Spercent521/GraduateWorkArchive_CSer.git
+cd GraduateWorkArchive_CSer
+
+# 2. 创建全新空分支
+git checkout --orphan <新分支名称>
+
+# 3. 清理原有文件
+git rm -rf .
+
+# 4. 复制你的新项目文件到此目录
+# （请根据你的系统使用合适的复制命令）📂
+
+# 5. 设置 LFS 跟踪大文件（如果需要）
+git lfs track "*.zip"
+
+# 6. 添加并提交所有文件
+git add .
+git commit -m "初始提交：<项目描述>"
+
+# 7. 推送到 GitHub
+git push -u origin <新分支名称>
+```
+
+---
+
+## 📄 许可证
+
+本项目中的每个子项目可能使用不同的许可证，请查看各自项目目录中的 LICENSE 文件了解详情。⚖️
+
+---
+
+Happy Coding! 💻🚀
